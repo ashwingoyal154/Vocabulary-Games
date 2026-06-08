@@ -163,6 +163,14 @@ export const Store = {
     emit();
   },
 
+  /** Replace the entire state (used by cloud sync). Normalizes through merge() so
+   *  nested defaults are always present, then re-evaluates the current day. */
+  replaceState(next: GameState) {
+    state = merge(next);
+    ensureDay();
+    emit();
+  },
+
   // ---- portable backup / restore (carry progress across browsers/devices) ----
   exportCode(): string {
     try {

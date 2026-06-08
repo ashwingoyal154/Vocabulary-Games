@@ -6,6 +6,8 @@ import { Library } from "./modes/Library";
 import { ClusterGame } from "./modes/ClusterGame";
 import { QuizGame } from "./modes/QuizGame";
 import { SettingsSheet, SettingsTrigger } from "./components/Settings";
+import { AuthTrigger, AuthSheet } from "./components/Auth";
+import { ProgressSync } from "./components/ProgressSync";
 
 const DEFAULT_DAILY_GOAL = 100;
 
@@ -14,6 +16,7 @@ export default function App() {
   const StoreH = useStore();
   const s = StoreH.get();
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [authOpen, setAuthOpen] = useState(false);
 
   // ensure the daily goal has a sane default the first time the app loads
   useEffect(() => {
@@ -33,6 +36,7 @@ export default function App() {
         <div className="topbar-stats">
           <span className="stat-pill flame"><span className="ico">▲</span>{s.streak}</span>
           <span className="stat-pill gem"><span className="ico">◆</span>{StoreH.masteredCount()}</span>
+          <AuthTrigger onOpen={() => setAuthOpen(true)} />
           <SettingsTrigger onOpen={() => setSettingsOpen(true)} />
         </div>
       </header>
@@ -74,6 +78,9 @@ export default function App() {
         onChangeUpper={(v) => Store.setSetting("upper", v)}
         onChangeGoal={(v) => Store.setGoal(v)}
       />
+
+      <AuthSheet open={authOpen} onClose={() => setAuthOpen(false)} />
+      <ProgressSync />
     </div>
   );
 }
