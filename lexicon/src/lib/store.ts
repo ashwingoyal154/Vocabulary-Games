@@ -58,12 +58,24 @@ function clone<T>(o: T): T {
   return JSON.parse(JSON.stringify(o));
 }
 
+function merge(data: Partial<GameState>): GameState {
+  // Shallow-merge top-level keys, but deep-merge the fixed-shape nested objects so
+  // older / partial saves that predate a field still get sane defaults (e.g. a saved
+  // `daily` without `hitGoalDays` must not leave it undefined — addPoints() would throw).
+  const base = clone(DEFAULT);
+  const out = Object.assign(base, data);
+  out.daily = Object.assign(clone(DEFAULT.daily), data.daily);
+  out.totals = Object.assign(clone(DEFAULT.totals), data.totals);
+  out.settings = Object.assign(clone(DEFAULT.settings), data.settings);
+  return out;
+}
+
 function load(): GameState {
   try {
     const raw = localStorage.getItem(KEY);
     if (!raw) return clone(DEFAULT);
     const data = JSON.parse(raw);
-    return Object.assign(clone(DEFAULT), data);
+    return merge(data);
   } catch {
     return clone(DEFAULT);
   }
@@ -165,7 +177,7 @@ export const Store = {
       const payload = JSON.parse(decodeURIComponent(escape(atob(code.trim()))));
       const incoming = payload && payload.state ? payload.state : payload;
       if (!incoming || typeof incoming !== "object" || !("mastery" in incoming)) return false;
-      state = Object.assign(clone(DEFAULT), incoming);
+      state = merge(incoming);
       ensureDay();
       emit();
       return true;
