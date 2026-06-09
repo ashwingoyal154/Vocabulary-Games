@@ -1,8 +1,9 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Cluster } from "../data/vocab-data";
 import { BIG_CLUSTERS } from "../data/vocab-data";
 import { Store } from "../lib/store";
 import type { SessionReview } from "../lib/store";
+import { track } from "../lib/analytics";
 import { CLUSTER_COLORS, displayWord, pick, shuffle, useStore, useToast } from "../lib/hooks";
 import { ConnBadge } from "../components/Badges";
 import { ToastStack } from "../components/Toast";
@@ -105,7 +106,17 @@ export function ClusterGame({ onExit }: { onExit: () => void }) {
   // Points earned this board, tracked in a ref so finish() reads the final total.
   const pointsRef = useRef(0);
 
+  // Log the first board once per mount (ref guard avoids a double-fire under
+  // StrictMode's double-invoked effects in dev).
+  const startedRef = useRef(false);
+  useEffect(() => {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    track("round_start", { mode: "clusters" });
+  }, []);
+
   function newBoard() {
+    track("round_start", { mode: "clusters", again: true });
     const g = buildClusterBoard();
     setGroups(g); setTiles(layout(g)); setSelected([]); setSolved([]);
     setMistakes(0); setHintsLeft(3); setClues([]); setDone(false); setMissed(false);
@@ -127,6 +138,14 @@ export function ClusterGame({ onExit }: { onExit: () => void }) {
     setMissed(wasMissed);
     setDone(true);
     Store.finishRound({ correct: wasMissed ? 0 : 4 });
+    track("round_finish", {
+      mode: "clusters",
+      correct: solvedCount,
+      total: 4,
+      points: pointsRef.current,
+      missed: wasMissed,
+      mistakes: mistakeCount,
+    });
     setReview(Store.addReview({
       mode: "clusters",
       day: Store.todayStr(),

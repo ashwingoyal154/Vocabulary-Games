@@ -1,8 +1,9 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Cluster, Connotation } from "../data/vocab-data";
 import { ALL_MEMBER_WORDS, ANTONYM_CLUSTERS, CLUSTERS, WORD_INDEX } from "../data/vocab-data";
 import { Store } from "../lib/store";
 import type { SessionReview } from "../lib/store";
+import { track } from "../lib/analytics";
 import { displayWord, pick, sample, shuffle, useStore } from "../lib/hooks";
 import { ConnBadge } from "../components/Badges";
 import { ProgressRing } from "../components/ProgressRing";
@@ -109,6 +110,15 @@ export function QuizGame({ mode, onExit }: { mode: Mode; onExit: () => void }) {
   const pointsRef = useRef(0);
   const marksRef = useRef<boolean[]>([]);
 
+  // Mark the start of a round once per mount (the ref guard keeps StrictMode's
+  // double-invoked effect from logging it twice in dev).
+  const startedRef = useRef(false);
+  useEffect(() => {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    track("round_start", { mode });
+  }, [mode]);
+
   function answer(opt: LightningOption | AntonymOption) {
     if (picked !== null) return;
     const isCorrect = !!opt.correct;
@@ -133,6 +143,13 @@ export function QuizGame({ mode, onExit }: { mode: Mode; onExit: () => void }) {
   function next() {
     if (idx >= ROUND_LEN) {
       Store.finishRound({ correct: correctCount, wrong: ROUND_LEN - correctCount });
+      track("round_finish", {
+        mode,
+        correct: correctCount,
+        total: ROUND_LEN,
+        points: pointsRef.current,
+        bestCombo,
+      });
       setReview(Store.addReview({
         mode,
         day: Store.todayStr(),
@@ -151,6 +168,7 @@ export function QuizGame({ mode, onExit }: { mode: Mode; onExit: () => void }) {
   }
 
   function restart() {
+    track("round_start", { mode, again: true });
     setReview(null); setQ(gen()); setIdx(1); setPicked(null);
     setCombo(0); setBestCombo(0); setCorrectCount(0);
     pointsRef.current = 0; marksRef.current = [];

@@ -5,11 +5,16 @@ import { Hub, type Route } from "./modes/Hub";
 import { Library } from "./modes/Library";
 import { ClusterGame } from "./modes/ClusterGame";
 import { QuizGame } from "./modes/QuizGame";
+import { Dashboard } from "./modes/Dashboard";
 import { SettingsSheet, SettingsTrigger } from "./components/Settings";
 import { AuthTrigger, AuthSheet } from "./components/Auth";
 import { ProgressSync } from "./components/ProgressSync";
+import { track } from "./lib/analytics";
 
 const DEFAULT_DAILY_GOAL = 100;
+
+const isAdminHash = () =>
+  typeof window !== "undefined" && window.location.hash.replace(/^#\/?/, "").toLowerCase() === "admin";
 
 export default function App() {
   const [route, setRoute] = useState<Route>("hub");
@@ -17,14 +22,26 @@ export default function App() {
   const s = StoreH.get();
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
+  const [admin, setAdmin] = useState(isAdminHash);
 
   // ensure the daily goal has a sane default the first time the app loads
   useEffect(() => {
     if (!Store.get().daily.goal) Store.setGoal(DEFAULT_DAILY_GOAL);
   }, []);
 
-  const go = (r: Route) => setRoute(r);
+  // The analytics dashboard lives at #admin so it can be bookmarked (incl. on a phone).
+  useEffect(() => {
+    const onHash = () => setAdmin(isAdminHash());
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+
+  const go = (r: Route) => { track("mode_open", { mode: r }); setRoute(r); };
   const exit = () => setRoute("hub");
+
+  if (admin) {
+    return <Dashboard onExit={() => { window.location.hash = ""; setAdmin(false); }} />;
+  }
 
   return (
     <div className="app-root">

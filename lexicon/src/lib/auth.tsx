@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import type { Session, User } from "@supabase/supabase-js";
 import { supabase, isSupabaseConfigured } from "./supabase";
+import { track } from "./analytics";
 
 export interface AuthResult {
   error: string | null;
@@ -46,12 +47,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (!supabase) return { error: "Accounts aren't configured yet." };
       const { data, error } = await supabase.auth.signUp({ email, password });
       if (error) return { error: error.message };
+      track("sign_up", { needsConfirm: !data.session });
       return { error: null, needsConfirm: !data.session };
     },
 
     async signIn(email, password) {
       if (!supabase) return { error: "Accounts aren't configured yet." };
       const { error } = await supabase.auth.signInWithPassword({ email, password });
+      if (!error) track("sign_in");
       return { error: error ? error.message : null };
     },
 
