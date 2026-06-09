@@ -23,6 +23,8 @@ export function AuthSheet({ open, onClose }: { open: boolean; onClose: () => voi
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
@@ -31,9 +33,13 @@ export function AuthSheet({ open, onClose }: { open: boolean; onClose: () => voi
 
   async function submit(e: FormEvent) {
     e.preventDefault();
-    setBusy(true);
     setErr(null);
     setInfo(null);
+    if (mode === "signup" && password !== confirm) {
+      setErr("Passwords don't match.");
+      return;
+    }
+    setBusy(true);
     const res = mode === "signin" ? await signIn(email, password) : await signUp(email, password);
     setBusy(false);
     if (res.error) {
@@ -44,6 +50,7 @@ export function AuthSheet({ open, onClose }: { open: boolean; onClose: () => voi
       setInfo("Check your email to confirm your account, then sign in.");
       setMode("signin");
       setPassword("");
+      setConfirm("");
       return;
     }
     onClose(); // session is live — progress sync runs automatically
@@ -85,17 +92,43 @@ export function AuthSheet({ open, onClose }: { open: boolean; onClose: () => voi
             </label>
             <label className="auth-field">
               <span className="settings-label">Password</span>
-              <input
-                className="auth-input"
-                type="password"
-                autoComplete={mode === "signin" ? "current-password" : "new-password"}
-                required
-                minLength={6}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder={mode === "signup" ? "At least 6 characters" : "Your password"}
-              />
+              <div className="auth-input-wrap">
+                <input
+                  className="auth-input"
+                  type={showPassword ? "text" : "password"}
+                  autoComplete={mode === "signin" ? "current-password" : "new-password"}
+                  required
+                  minLength={6}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder={mode === "signup" ? "At least 6 characters" : "Your password"}
+                />
+                <button
+                  type="button"
+                  className="auth-reveal"
+                  onClick={() => setShowPassword((v) => !v)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                  aria-pressed={showPassword}
+                >
+                  {showPassword ? "Hide" : "Show"}
+                </button>
+              </div>
             </label>
+            {mode === "signup" && (
+              <label className="auth-field">
+                <span className="settings-label">Confirm password</span>
+                <input
+                  className="auth-input"
+                  type={showPassword ? "text" : "password"}
+                  autoComplete="new-password"
+                  required
+                  minLength={6}
+                  value={confirm}
+                  onChange={(e) => setConfirm(e.target.value)}
+                  placeholder="Re-enter your password"
+                />
+              </label>
+            )}
 
             {err && <p className="auth-error">{err}</p>}
             {info && <p className="auth-info">{info}</p>}
@@ -107,7 +140,7 @@ export function AuthSheet({ open, onClose }: { open: boolean; onClose: () => voi
             <button
               type="button"
               className="auth-toggle"
-              onClick={() => { setMode(mode === "signin" ? "signup" : "signin"); setErr(null); setInfo(null); }}
+              onClick={() => { setMode(mode === "signin" ? "signup" : "signin"); setErr(null); setInfo(null); setConfirm(""); }}
             >
               {mode === "signin" ? "New here? Create an account" : "Already have an account? Sign in"}
             </button>

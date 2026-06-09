@@ -16,6 +16,19 @@ Built with Vite + React + TypeScript.
 Progress (mastery levels, streaks, daily points) is saved to `localStorage` and
 can be carried between browsers/devices via the **Back up / Restore** codes in the footer.
 
+## Share & session history
+
+Finishing any round (Clusters, Lightning, Antonyms) saves a **session review** — a
+recap of that game (mode, date, score, points, best combo / mistakes). Each review is
+stored alongside your progress, so it rides the same `localStorage` save and, when
+you're signed in, the same Supabase mirror — no extra setup or table needed. The last
+50 are kept and de-duplicated across devices on sign-in.
+
+- **Share** buttons on the results screen and in the Hub's **Recent sessions** list
+  produce a Wordle-style text recap and post it via the native share sheet
+  (mobile), falling back to copying it to the clipboard.
+- The Lightning/Antonyms results screen also shows a per-question recap grid.
+
 ## Accounts & cross-device sync (optional)
 
 By default the game is local-only. Add a free Supabase project to enable
@@ -58,10 +71,11 @@ npm run smoke        # in another (tests http://localhost:5173)
 ## Project layout
 
 - `src/data/vocab-data.ts` — the meaning-family dataset (clusters, roles, antonyms)
-- `src/lib/store.ts` — persistent game state (mastery, streak, daily goal, backup codes)
+- `src/lib/store.ts` — persistent game state (mastery, streak, daily goal, backup codes, session reviews)
 - `src/lib/hooks.ts` — shared hooks/helpers (`useStore`, `displayWord`, `useToast`, …)
+- `src/lib/share.ts` — builds the shareable recap text and posts it (Web Share API → clipboard)
 - `src/lib/supabase.ts`, `src/lib/auth.tsx`, `src/lib/sync.ts` — optional accounts + cloud progress sync
-- `src/components/` — shared UI (badges, progress ring, toasts, settings sheet, auth sheet, `ProgressSync`)
+- `src/components/` — shared UI (badges, progress ring, toasts, settings sheet, auth sheet, `ProgressSync`, `ShareReviewButton`)
 - `src/modes/` — Hub, Library, Clusters, and Quiz (Lightning/Antonyms) screens
 - `src/styles/` — base + layout CSS (warm paper palette, Newsreader/Space Grotesk)
 - `supabase/schema.sql` — Postgres table + row-level security for saved progress

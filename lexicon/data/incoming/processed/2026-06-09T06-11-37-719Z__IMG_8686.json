@@ -1,0 +1,77 @@
+[
+  {
+    "name": "SHORT LIVED",
+    "conn": null,
+    "words": ["EPHEMERAL", "EVANESCENT", "FLEETING", "TRANSIENT", "TRANSITORY"]
+  },
+  {
+    "name": "NEVER ENDING / NON STOP",
+    "conn": null,
+    "words": ["CHRONIC", "INCESSANT", "INEXORABLE", "INTERMINABLE", "PERENNIAL", "RELENTLESS"]
+  },
+  {
+    "name": "END / STOP",
+    "conn": null,
+    "words": ["TERMINATE", "CULMINATE", "CEASE", "X ONSET"]
+  },
+  {
+    "name": "IRREGULAR / PERIODICALLY",
+    "conn": null,
+    "words": ["FITFULLY", "INTERMITTENT", "OCCASIONAL", "SPASMODIC", "SPORADIC"]
+  },
+  {
+    "name": "CALM DOWN",
+    "conn": "+",
+    "words": ["ALLAY", "ALLEVIATE", "AMELIORATE", "APPEASE", "ASSUAGE", "CONCILIATE", "EXTENUATING", "MITIGATE", "MOLLIFY", "PACIFY", "PLACATE", "PROPITIATE", "SOLACE", "TEMPER", "X EXACERBATE"]
+  },
+  {
+    "name": "LACKING ENERGY / LAZY",
+    "conn": "-",
+    "words": ["INDOLENT", "LACKADAISICAL", "LACKLUSTER", "LANGUID", "LASSITUDE", "LETHARGIC", "LISTLESS", "SLOTH", "SLUGGISH", "TORPOR", "TORPID"]
+  },
+  {
+    "name": "HARD WORKING",
+    "conn": "+",
+    "words": ["ASSIDUOUS", "DILIGENT", "INDUSTRIOUS", "PAINSTAKING", "SEDULOUS", "TOIL"]
+  },
+  {
+    "name": "HAPPY / JOYOUS",
+    "conn": null,
+    "words": ["BEAM", "BLITHE", "ECSTASY", "ELATED", "EUPHORIA", "EXHILARATION", "EXULTANT", "FACETIOUS", "FELICITY", "GAIETY", "JEST", "JOCULAR", "JOCUND", "JOLLITY", "JOVIAL", "JUBILANT", "RAPTUROUS", "REGALE", "UPROARIOUS"]
+  },
+  {
+    "name": "UNIMPORTANT / TRIVIAL",
+    "conn": null,
+    "words": ["EXPENDABLE", "FRINGE", "INCIDENTAL", "INCONSEQUENTIAL", "MARGINALIZATION", "PERIPHERAL"]
+  },
+  {
+    "name": "SAD / DEPRESSED",
+    "conn": null,
+    "words": ["ANGUISH", "BEREAVED", "BLEAK", "CRESTFALLEN", "DEJECTED", "DESOLATE", "DESPONDENT", "FORLORN", "GLUM", "LAMENT", "LUGUBRIOUS", "MELANCHOLY", "PLAINTIVE", "WOE"]
+  },
+  {
+    "name": "ENTHUSIASTIC / EXCITED",
+    "conn": null,
+    "words": ["ARDOR", "ARDENT", "AVID", "DYNAMIC", "EBULLIENT", "EFFERVESCENT", "EFFUSIVE", "EXUBERANT", "FERVENT", "FERVOR", "FRISKY", "GUSHING", "IMPASSIONED", "VIVACIOUS", "ZEALOUS", "ZEST", "X DAMPEN", "X TEPID"]
+  },
+  {
+    "name": "UNUSUAL / EXCEPTION",
+    "conn": null,
+    "words": ["ABERRATION", "ANOMALY", "DEVIATE"]
+  },
+  {
+    "name": "ORDINARY",
+    "conn": "-",
+    "words": ["BANAL", "CLICHÉ", "COMMONPLACE", "DERIVATIVE", "HACKNEY", "HUMDRUM", "MUNDANE", "PEDESTRIAN", "PLATITUDE", "PLEBEIAN", "QUOTIDIAN", "TRITE", "UNREMARKABLE"]
+  },
+  {
+    "name": "DIFFICULT TO UNDERSTAND",
+    "conn": "-",
+    "words": ["ABSTRACT", "ABSTRUSE", "ARCANE", "ESOTERIC", "MYSTICAL", "OBSCURE", "OCCULT", "RECONDITE", "PROFOUND", "PROFUNDITY", "X PERSPICUOUS"]
+  },
+  {
+    "name": "CRUCIAL / SIGNIFICANT",
+    "conn": null,
+    "words": ["CORE", "FOREMOST", "IMPERATIVE", "INDISPENSABLE", "MANDATORY", "MOMENTOUS", "PARAMOUNT", "PIVOTAL", "SALIENT"]
+  }
+]

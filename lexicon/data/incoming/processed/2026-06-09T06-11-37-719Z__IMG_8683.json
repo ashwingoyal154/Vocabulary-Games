@@ -1,0 +1,97 @@
+[
+  {
+    "name": "PREDICTION",
+    "conn": null,
+    "words": ["AUGUR", "AUGURY", "FORECAST", "FORESIGHT", "FORESEE", "FORETELL", "PRESAGE", "PRESCIENCE", "PROGNOSIS"]
+  },
+  {
+    "name": "SIGN (WARNING)",
+    "conn": "-",
+    "words": ["FOREBODE", "FORESHADOW", "PORTEND", "PORTENT", "PREMONITION"]
+  },
+  {
+    "name": "THREATENING",
+    "conn": null,
+    "words": ["OMINOUS", "SINISTER"]
+  },
+  {
+    "name": "VERY ANGRY",
+    "conn": null,
+    "words": ["ENRAGE", "FUME", "GLOWER", "INCENSE", "INFURIATE", "IRATE", "IRE", "LIVID", "RABID", "SEETHE", "SMOLDER", "WRATH"]
+  },
+  {
+    "name": "DETAILED KNOWLEDGE / INTELLECTUAL",
+    "conn": null,
+    "words": ["CEREBRAL", "ERUDITE", "PUNDIT"]
+  },
+  {
+    "name": "SKILLFUL",
+    "conn": null,
+    "words": ["ADEPT", "ADROIT", "AGILE", "CONSUMMATE", "DEFT", "DEXTEROUS", "PROFICIENT", "PROWESS", "X INEPT", "X MALADROIT"]
+  },
+  {
+    "name": "FLEXIBLE",
+    "conn": null,
+    "words": ["LIMBER", "LITHE", "NIMBLE", "SUPPLE"]
+  },
+  {
+    "name": "HAVING TWISTS / TURNS",
+    "conn": null,
+    "words": ["CIRCUITOUS", "CONVOLUTED", "INTERTWINED", "INVOLVED", "MEANDER", "SINUOUS", "TORTUOUS"]
+  },
+  {
+    "name": "INCLINATION",
+    "conn": null,
+    "words": ["AFFINITY", "APTITUDE", "BENT", "DISPOSED", "INCLINED", "PENCHANT", "PREDILECTION", "PREDISPOSITION", "PROCLIVITY", "PROPENSITY"]
+  },
+  {
+    "name": "HORRIFYING / SHOCKING",
+    "conn": null,
+    "words": ["AGHAST", "APPALLING", "EGREGIOUS", "GHASTLY", "GRISLY", "GROSS", "GROTESQUE", "GRUESOME", "HEINOUS", "HIDEOUS", "HORRENDOUS", "MONSTROUS", "MORBID", "UNSIGHTLY", "VILE"]
+  },
+  {
+    "name": "ATTRACTIVE",
+    "conn": null,
+    "words": ["AESTHETIC", "COMELY"]
+  },
+  {
+    "name": "SEPARATE",
+    "conn": null,
+    "words": ["DISJOINTED", "POLARIZE", "SEGREGATE", "X NEXUS"]
+  },
+  {
+    "name": "VERY TALENTED (CHILD)",
+    "conn": null,
+    "words": ["PRODIGY", "PRECOCIOUS"]
+  },
+  {
+    "name": "FOOLISH TALK",
+    "conn": null,
+    "words": ["BABBLE", "BLATHER", "DRAWL", "DRIVEL", "GIBBERISH", "JABBER", "NONSENSICAL", "PRATE", "PRATTLE"]
+  },
+  {
+    "name": "AVOID / DODGE",
+    "conn": null,
+    "words": ["AVERT", "CIRCUMVENT", "DEFLECT", "ELUDE", "EVADE", "EVASIVE", "PARRY", "SHIRK", "SHUNT", "SKIRT", "SWERVE", "X HEAD-ON"]
+  },
+  {
+    "name": "AWKWARD / CLUMSY",
+    "conn": null,
+    "words": ["FECKLESS", "FUMBLE", "GAUCHE", "GAWKY", "UNGAINLY"]
+  },
+  {
+    "name": "OPTIMISTS",
+    "conn": null,
+    "words": ["BUOYANT", "SANGUINE"]
+  },
+  {
+    "name": "BE SLOW / WASTE TIME",
+    "conn": null,
+    "words": ["DALLY", "DAWDLE", "DILATORY", "DILLY DALLY", "LAGGARD", "LINGER", "MALINGER"]
+  },
+  {
+    "name": "TO DO WITH TEACHING",
+    "conn": null,
+    "words": ["PEDANTIC", "DIDACTIC"]
+  }
+]

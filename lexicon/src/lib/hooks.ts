@@ -9,6 +9,17 @@ export function useStore() {
   return Store;
 }
 
+/** Returns `value` after it has stopped changing for `delay` ms — keeps the Library's
+ *  filter from recomputing on every keystroke as the dataset grows. */
+export function useDebouncedValue<T>(value: T, delay = 150): T {
+  const [debounced, setDebounced] = useState(value);
+  useEffect(() => {
+    const t = setTimeout(() => setDebounced(value), delay);
+    return () => clearTimeout(t);
+  }, [value, delay]);
+  return debounced;
+}
+
 export function shuffle<T>(arr: T[]): T[] {
   const a = arr.slice();
   for (let i = a.length - 1; i > 0; i--) {

@@ -1,0 +1,107 @@
+[
+  {
+    "name": "EQUALITY",
+    "conn": null,
+    "words": ["COMMENSURATE", "PARITY", "PEERS", "X DISPARATE"]
+  },
+  {
+    "name": "AGREEMENT / HARMONY",
+    "conn": null,
+    "words": ["ACCORD", "CONCORD", "CONFORMITY", "CONGRUOUS", "CONSONANCE", "HARMONIOUS", "X DISCORD", "X DISSONANCE", "X FACTION", "X INCOMPATIBLE"]
+  },
+  {
+    "name": "SPLIT / GAP",
+    "conn": null,
+    "words": ["CHASM", "DICHOTOMY", "GULF", "RIFT", "SCHISM"]
+  },
+  {
+    "name": "AGGRESSIVE / ARGUMENTATIVE",
+    "conn": null,
+    "words": ["BELLICOSE", "BELLIGERENT", "CONTENTIOUS", "DISPUTATIOUS", "FRACTIOUS", "HOSTILITY", "LITIGIOUS", "POLEMICAL", "PUGNACIOUS", "TRUCULENT"]
+  },
+  {
+    "name": "ARGUE / FIGHT",
+    "conn": null,
+    "words": ["ALTERCATION", "BICKER", "BRAWL", "COMBAT", "CONTEND", "QUIBBLE", "ROW", "SCUFFLE", "SQUABBLE", "TIFF", "TUSSLE", "X TRUCE"]
+  },
+  {
+    "name": "SURPRISE / CONFUSE",
+    "conn": null,
+    "words": ["ASTOUND", "BAFFLE", "BEFUDDLE", "BEMUSE", "BEWILDER", "CONFOUND", "FLABBERGASTED", "FOXED", "NONPLUSSED", "OBFUSCATE", "PERPLEX", "STUPEFY"]
+  },
+  {
+    "name": "EXCESSIVE FLATTERY",
+    "conn": "-",
+    "words": ["FAWN", "FULSOME", "OBSEQUIOUS", "SYCOPHANT"]
+  },
+  {
+    "name": "INSULTING WORDS",
+    "conn": null,
+    "words": ["DEPRECATORY", "DEROGATORY", "PEJORATIVE"]
+  },
+  {
+    "name": "CALM",
+    "conn": null,
+    "words": ["APLOMB", "COMPOSURE", "EQUANIMITY", "IMPASSIVE", "IMPERTURBABLE", "NONCHALANT", "PHLEGMATIC", "PLACID", "SERENE", "STAID", "STOLID", "TRANQUIL"]
+  },
+  {
+    "name": "INDIFFERENT",
+    "conn": null,
+    "words": ["APATHY", "STOIC"]
+  },
+  {
+    "name": "MAKE HOSTILE",
+    "conn": null,
+    "words": ["ALIENATE", "ANTAGONIZE", "ESTRANGE"]
+  },
+  {
+    "name": "INCLUDE EVERYTHING",
+    "conn": null,
+    "words": ["COMPREHENSIVE", "ENCOMPASS", "EXPANSIVE", "PERVASIVE"]
+  },
+  {
+    "name": "PRESENT EVERYWHERE",
+    "conn": null,
+    "words": ["UBIQUITOUS", "OMNIPRESENT"]
+  },
+  {
+    "name": "NARROW MINDED / REGIONAL",
+    "conn": null,
+    "words": ["INSULAR", "MYOPIC", "PAROCHIAL", "PROVINCIAL"]
+  },
+  {
+    "name": "BIASED",
+    "conn": null,
+    "words": ["BIGOT", "DISCRIMINATORY", "X DISINTERESTED", "PARTISAN", "PREJUDICED"]
+  },
+  {
+    "name": "IMPARTIAL",
+    "conn": null,
+    "words": ["DISPASSIONATE", "EGALITARIAN", "EQUITABLE", "EVENHANDED", "OBJECTIVITY"]
+  },
+  {
+    "name": "NOT SERIOUS / DISRESPECT",
+    "conn": "-",
+    "words": ["FLIPPANT", "FRIVOLOUS", "FRIVOLITY", "INSOUCIANT", "LEVITY", "X GRAVE", "X GRAVITY"]
+  },
+  {
+    "name": "DISTURBED / AGITATED",
+    "conn": null,
+    "words": ["CONSTERNATION", "DISCONCERT", "DISMAY", "DISTRAUGHT", "FAZE", "FLUSTER", "FOMENT", "FRENETIC", "HYSTERICAL", "IMPLACABLE", "OVERWROUGHT", "PERTURB"]
+  },
+  {
+    "name": "OVERLY OBEDIENT",
+    "conn": "-",
+    "words": ["GROVEL", "SERVILE", "SLAVISH", "SUBSERVIENT", "SUPPLICANT"]
+  },
+  {
+    "name": "SUPPRESS / END",
+    "conn": null,
+    "words": ["QUASH", "QUELL", "REPRESS", "SCOTCH", "SUBDUE", "SUPPRESS"]
+  },
+  {
+    "name": "DOMINATING",
+    "conn": "-",
+    "words": ["ABSOLUTE", "AUTHORITATIVE", "AUTOCRAT", "DESPOT", "DOGMATIC", "HEGEMONY", "IMPERIOUS", "MARTINET", "TOTALITARIAN", "TYRANT"]
+  }
+]

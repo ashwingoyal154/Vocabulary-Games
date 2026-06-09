@@ -1,6 +1,8 @@
 import { CLUSTERS, ALL_MEMBER_WORDS } from "../data/vocab-data";
 import { useStore } from "../lib/hooks";
 import { ProgressRing } from "../components/ProgressRing";
+import { ShareReviewButton } from "../components/ShareReviewButton";
+import { MODE_LABEL, fmtDay } from "../lib/share";
 
 export type Route = "hub" | "clusters" | "lightning" | "antonym" | "study";
 
@@ -21,6 +23,7 @@ export function Hub({ go }: { go: (r: Route) => void }) {
   const learning = Store.learningCount();
   const dailyPct = Math.min(1, s.daily.points / s.daily.goal);
   const goalHit = s.daily.points >= s.daily.goal;
+  const reviews = Store.recentReviews(5);
 
   return (
     <div className="hub fade-in">
@@ -82,6 +85,24 @@ export function Hub({ go }: { go: (r: Route) => void }) {
         <span>Browse the lexicon</span>
         <span className="study-meta">{CLUSTERS.length} families · {total} words</span>
       </button>
+
+      {reviews.length > 0 && (
+        <div className="reviews panel">
+          <span className="eyebrow">Recent sessions</span>
+          <ul className="review-list">
+            {reviews.map((r) => (
+              <li key={r.id} className="review-row">
+                <span className="review-mode" data-mode={r.mode}>{MODE_LABEL[r.mode]}</span>
+                <span className="review-score">
+                  {r.mode === "clusters" ? `${r.correct}/4 groups` : `${r.correct}/${r.total}`}
+                </span>
+                <span className="review-day">{fmtDay(r.day)}</span>
+                <ShareReviewButton review={r} streak={s.streak} className="review-share" />
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }

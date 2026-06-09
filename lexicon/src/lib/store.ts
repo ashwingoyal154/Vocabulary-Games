@@ -19,6 +19,25 @@ export interface Settings {
   motion: boolean;
 }
 
+export type ReviewMode = "clusters" | "lightning" | "antonym";
+
+/** A saved recap of one completed game session — the unit the "Share review"
+ *  feature shares and the "Recent sessions" list shows. Stored inside GameState
+ *  so it rides the existing localStorage save and Supabase mirror for free. */
+export interface SessionReview {
+  id: string;
+  mode: ReviewMode;
+  day: string;          // local day string (Store.todayStr), e.g. "2026-6-8"
+  ts: number;           // Date.now() at completion — sort/merge key
+  correct: number;      // quiz: questions right · clusters: groups solved
+  total: number;        // quiz: round length · clusters: 4
+  points: number;       // points earned during this session
+  bestCombo?: number;   // quiz modes only
+  marks?: boolean[];    // quiz modes: per-question correctness (recap grid)
+  missed?: boolean;     // clusters: ran out of guesses
+  mistakes?: number;    // clusters: wrong group guesses
+}
+
 export interface GameState {
   mastery: Record<string, number>;
   seen: Record<string, boolean>;
@@ -27,9 +46,11 @@ export interface GameState {
   daily: DailyState;
   totals: Totals;
   settings: Settings;
+  reviews: SessionReview[];
 }
 
 const KEY = "gre_vocab_game_v1";
+const MAX_REVIEWS = 50;
 
 function todayStr(): string {
   const d = new Date();
@@ -51,11 +72,16 @@ const DEFAULT: GameState = {
   lastPlayed: null,
   daily: { day: null, points: 0, goal: 100, hitGoalDays: [] },
   totals: { rounds: 0, correct: 0, wrong: 0, points: 0 },
-  settings: { upper: false, motion: true }
+  settings: { upper: false, motion: true },
+  reviews: []
 };
 
 function clone<T>(o: T): T {
   return JSON.parse(JSON.stringify(o));
+}
+
+function makeId(): string {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
 }
 
 function merge(data: Partial<GameState>): GameState {
@@ -67,6 +93,7 @@ function merge(data: Partial<GameState>): GameState {
   out.daily = Object.assign(clone(DEFAULT.daily), data.daily);
   out.totals = Object.assign(clone(DEFAULT.totals), data.totals);
   out.settings = Object.assign(clone(DEFAULT.settings), data.settings);
+  out.reviews = Array.isArray(data.reviews) ? data.reviews.slice(0, MAX_REVIEWS) : [];
   return out;
 }
 
@@ -154,6 +181,18 @@ export const Store = {
   },
 
   commit() { emit(); },
+
+  // ---- session reviews (shareable recaps of finished games) ----
+  /** Save a completed session. Assigns an id, keeps newest first, caps history.
+   *  Returns the stored review so callers can share it immediately. */
+  addReview(r: Omit<SessionReview, "id">): SessionReview {
+    const review: SessionReview = { ...r, id: makeId() };
+    state.reviews = [review, ...state.reviews].slice(0, MAX_REVIEWS);
+    emit();
+    return review;
+  },
+  recentReviews(n: number = MAX_REVIEWS): SessionReview[] { return state.reviews.slice(0, n); },
+  clearReviews() { state.reviews = []; emit(); },
 
   setGoal(g: number) { ensureDay(); state.daily.goal = g; emit(); },
   setSetting<K extends keyof Settings>(k: K, v: Settings[K]) { state.settings[k] = v; emit(); },

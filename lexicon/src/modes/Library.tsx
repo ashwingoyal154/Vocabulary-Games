@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { CLUSTERS } from "../data/vocab-data";
-import { displayWord, useStore } from "../lib/hooks";
+import { displayWord, useDebouncedValue, useStore } from "../lib/hooks";
 import { ConnBadge, MasteryDots } from "../components/Badges";
 
 type Filter = "all" | "mastered" | "learning" | "new";
@@ -12,20 +12,29 @@ export function Library({ onExit }: { onExit: () => void }) {
   const upper = Store.get().settings.upper;
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<Filter>("all");
-  const q = query.trim().toLowerCase();
+  const q = useDebouncedValue(query.trim().toLowerCase(), 150);
 
-  const clusters = CLUSTERS.map((c) => {
-    const words = c.words.filter((x) => {
-      if (q && !(x.w.toLowerCase().includes(q) || c.name.toLowerCase().includes(q))) return false;
-      if (filter === "all") return true;
-      const lvl = Store.level(x.w);
-      if (filter === "mastered") return lvl >= 3;
-      if (filter === "learning") return lvl >= 1 && lvl < 3;
-      if (filter === "new") return lvl === 0;
-      return true;
-    });
-    return { c, words };
-  }).filter((g) => g.words.length > 0);
+  // Build the filtered tree once per (query, filter) instead of on every render/keystroke.
+  // Mastery levels only change while *playing* — never from this screen — so q + filter
+  // fully determine the result while the Library is mounted; the offscreen rows are skipped
+  // by CSS `content-visibility`, keeping this smooth into the thousands of words.
+  const clusters = useMemo(() => {
+    return CLUSTERS.map((c) => {
+      const words = c.words.filter((x) => {
+        if (q && !(x.w.toLowerCase().includes(q) || c.name.toLowerCase().includes(q))) return false;
+        if (filter === "all") return true;
+        const lvl = Store.level(x.w);
+        if (filter === "mastered") return lvl >= 3;
+        if (filter === "learning") return lvl >= 1 && lvl < 3;
+        if (filter === "new") return lvl === 0;
+        return true;
+      });
+      return { c, words };
+    }).filter((g) => g.words.length > 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [q, filter]);
+
+  const wordCount = useMemo(() => clusters.reduce((n, g) => n + g.words.length, 0), [clusters]);
 
   return (
     <div className="library mode-wrap">
@@ -43,6 +52,10 @@ export function Library({ onExit }: { onExit: () => void }) {
             <button key={k} className={"lib-fbtn " + (filter === k ? "on" : "")} onClick={() => setFilter(k)}>{l}</button>
           ))}
         </div>
+      </div>
+
+      <div className="lib-count">
+        {wordCount.toLocaleString()} {wordCount === 1 ? "word" : "words"} · {clusters.length} {clusters.length === 1 ? "family" : "families"}
       </div>
 
       <div className="lib-list">

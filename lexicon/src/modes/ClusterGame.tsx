@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { Cluster } from "../data/vocab-data";
 import { BIG_CLUSTERS } from "../data/vocab-data";
 import { Store } from "../lib/store";
+import type { SessionReview } from "../lib/store";
 import { CLUSTER_COLORS, displayWord, pick, shuffle, useStore, useToast } from "../lib/hooks";
 import { ConnBadge } from "../components/Badges";
 import { ToastStack } from "../components/Toast";
+import { ShareReviewButton } from "../components/ShareReviewButton";
 
 interface BoardGroup {
   gid: number;
@@ -99,11 +101,15 @@ export function ClusterGame({ onExit }: { onExit: () => void }) {
   const [shakeKey, setShakeKey] = useState(0);
   const [done, setDone] = useState(false);
   const [missed, setMissed] = useState(false);
+  const [review, setReview] = useState<SessionReview | null>(null);
+  // Points earned this board, tracked in a ref so finish() reads the final total.
+  const pointsRef = useRef(0);
 
   function newBoard() {
     const g = buildClusterBoard();
     setGroups(g); setTiles(layout(g)); setSelected([]); setSolved([]);
     setMistakes(0); setHintsLeft(3); setClues([]); setDone(false); setMissed(false);
+    setReview(null); pointsRef.current = 0;
   }
 
   const groupById = (gid: number) => groups?.find((g) => g.gid === gid);
@@ -117,18 +123,29 @@ export function ClusterGame({ onExit }: { onExit: () => void }) {
     });
   }
 
-  function finish(wasMissed: boolean) {
+  function finish(wasMissed: boolean, solvedCount: number, mistakeCount: number) {
     setMissed(wasMissed);
     setDone(true);
     Store.finishRound({ correct: wasMissed ? 0 : 4 });
+    setReview(Store.addReview({
+      mode: "clusters",
+      day: Store.todayStr(),
+      ts: Date.now(),
+      correct: solvedCount,
+      total: 4,
+      points: pointsRef.current,
+      missed: wasMissed,
+      mistakes: mistakeCount,
+    }));
   }
 
-  function revealAll() {
+  function revealAll(mistakeCount: number) {
     const remaining = (groups || []).map((g) => g.gid).filter((gid) => !solved.includes(gid));
+    const solvedCount = solved.length;
     setSolved((s) => [...s, ...remaining]);
     setTiles([]);
     setSelected([]);
-    finish(true);
+    finish(true, solvedCount, mistakeCount);
   }
 
   function submit() {
@@ -140,14 +157,16 @@ export function ClusterGame({ onExit }: { onExit: () => void }) {
       const g = groupById(gid)!;
       g.words.forEach((w) => Store.recordWord(w, true));
       const noMiss = mistakes === 0;
-      Store.addPoints(25 + (noMiss ? 5 : 0));
+      const gain = 25 + (noMiss ? 5 : 0);
+      pointsRef.current += gain;
+      Store.addPoints(gain);
       Store.commit();
       const newSolved = [...solved, gid];
       setSolved(newSolved);
       setTiles((t) => t.filter((x) => x.gid !== gid));
       setSelected([]);
       toast(g.name, "good");
-      if (newSolved.length === 4) finish(false);
+      if (newSolved.length === 4) finish(false, 4, mistakes);
     } else {
       const counts: Record<number, number> = {};
       gids.forEach((g) => counts[g] = (counts[g] || 0) + 1);
@@ -156,7 +175,7 @@ export function ClusterGame({ onExit }: { onExit: () => void }) {
       const m = mistakes + 1;
       setMistakes(m);
       toast(max === 3 ? "So close — one away!" : "Not a group", "bad");
-      if (m >= MAX_MISTAKES) revealAll();
+      if (m >= MAX_MISTAKES) revealAll(m);
     }
   }
 
@@ -247,16 +266,17 @@ export function ClusterGame({ onExit }: { onExit: () => void }) {
         </div>
       )}
 
-      {done && (
-        <ClusterResults groups={groups} missed={missed}
+      {done && review && (
+        <ClusterResults groups={groups} missed={missed} review={review} streak={StoreH.get().streak}
           upper={upper} onNext={newBoard} onExit={onExit} />
       )}
     </div>
   );
 }
 
-function ClusterResults({ groups, missed, upper, onNext, onExit }: {
-  groups: BoardGroup[]; missed: boolean; upper: boolean; onNext: () => void; onExit: () => void;
+function ClusterResults({ groups, missed, review, streak, upper, onNext, onExit }: {
+  groups: BoardGroup[]; missed: boolean; review: SessionReview; streak: number;
+  upper: boolean; onNext: () => void; onExit: () => void;
 }) {
   return (
     <div className="results fade-in">
@@ -288,6 +308,7 @@ function ClusterResults({ groups, missed, upper, onNext, onExit }: {
       </div>
       <div className="results-actions">
         <button className="btn btn-ghost" onClick={onExit}>Hub</button>
+        <ShareReviewButton review={review} streak={streak} className="btn btn-ghost" />
         <button className="btn btn-rust" onClick={onNext}>Next puzzle →</button>
       </div>
     </div>

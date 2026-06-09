@@ -1,5 +1,7 @@
-import type { GameState } from "./store";
+import type { GameState, SessionReview } from "./store";
 import { supabase } from "./supabase";
+
+const MAX_REVIEWS = 50;
 
 /* Cloud sync for game progress.
  *
@@ -36,6 +38,13 @@ export function mergeStates(local: GameState, remote: GameState): GameState {
     ...(remote.daily.hitGoalDays || []),
   ]));
 
+  // Union of session reviews from both devices, de-duped by id, newest first.
+  const reviewsById = new Map<string, SessionReview>();
+  for (const r of [...(remote.reviews || []), ...(local.reviews || [])]) reviewsById.set(r.id, r);
+  const reviews = Array.from(reviewsById.values())
+    .sort((a, b) => b.ts - a.ts)
+    .slice(0, MAX_REVIEWS);
+
   let daily: GameState["daily"];
   if (local.daily.day && local.daily.day === remote.daily.day) {
     daily = {
@@ -63,6 +72,7 @@ export function mergeStates(local: GameState, remote: GameState): GameState {
     },
     // device-local preference — keep what's set on this device
     settings: local.settings,
+    reviews,
   };
 }
 

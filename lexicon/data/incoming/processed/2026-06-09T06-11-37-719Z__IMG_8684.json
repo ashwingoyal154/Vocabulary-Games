@@ -1,0 +1,72 @@
+[
+  {
+    "name": "HATE",
+    "conn": null,
+    "words": ["ABHOR", "ANIMOSITY", "ANTIPATHY", "AVERSION", "DESPICABLE", "DETEST", "LOATHE", "ODIOUS", "REPEL", "REPUGNANT", "REPULSION"]
+  },
+  {
+    "name": "OLD FASHIONED / OUTDATED",
+    "conn": null,
+    "words": ["ANTEDILUVIAN", "ANTIQUATED", "ARCHAIC", "DATED", "OBSOLETE", "OUTMODED", "QUAINT"]
+  },
+  {
+    "name": "TIME RELATED WORDS",
+    "conn": null,
+    "words": ["ANACHRONISM", "CHRONICLE", "CHRONOLOGICAL"]
+  },
+  {
+    "name": "CAUTIOUS / CAREFUL",
+    "conn": null,
+    "words": ["CHARY", "CIRCUMSPECT", "GINGERLY", "HEEDFUL", "LEERY", "PRUDENT", "WARY", "X DAREDEVIL", "X FOLLY", "X FOOLHARDY", "X RASH", "X RECKLESS"]
+  },
+  {
+    "name": "MINOR SCOLDING / WARNING",
+    "conn": null,
+    "words": ["ADMONISH", "CENSURE", "CHASTISE", "CHIDE", "REBUKE", "REPRIMAND", "REPROACH", "REPROVE"]
+  },
+  {
+    "name": "DISAPPROVE / SCOLD",
+    "conn": null,
+    "words": ["ASSAIL", "BERATE", "CASTIGATE", "DECRY", "DENOUNCE", "DENUNCIATION", "DIATRIBE", "EPITHET", "EXCORIATE", "FULMINATE", "INVECTIVE", "LAMBASTE", "RANT", "REVILE", "RILE", "TIRADE", "UPBRAID", "VITUPERATIVE"]
+  },
+  {
+    "name": "TO DEFEAT",
+    "conn": null,
+    "words": ["DRUB", "PULVERIZE", "ROUT", "SUBJUGATE", "VANQUISH", "# CAPITULATE"]
+  },
+  {
+    "name": "REBELLIOUS / UNCONVENTIONAL",
+    "conn": null,
+    "words": ["DISSIDENT", "HERESY", "HERETICAL", "HETERODOX", "ICONOCLAST", "INSURGENT", "INSURRECTION", "MAVERICK", "NONCONFORMIST", "RADICAL", "X REACTIONARY", "RENEGADE", "REVOLUTIONARY", "SUBVERSIVE", "UNCONVENTIONAL", "X CONSERVATIVE", "X CONVENTIONAL", "X ORTHODOX"]
+  },
+  {
+    "name": "COMPLAIN (LOW DEGREE)",
+    "conn": null,
+    "words": ["CAPTIOUS", "CARPING", "GROUSE", "QUERULOUS"]
+  },
+  {
+    "name": "DANGER",
+    "conn": null,
+    "words": ["JEOPARDY", "PITFALL", "PRECARIOUS", "SNARE"]
+  },
+  {
+    "name": "BITTER FEELINGS / ILL-WILL",
+    "conn": null,
+    "words": ["MALEVOLENCE", "MALICE", "RANCOR", "VICIOUS", "VIRULENT"]
+  },
+  {
+    "name": "TROUBLED",
+    "conn": null,
+    "words": ["BESET", "BELEAGUERED", "PLAGUED"]
+  },
+  {
+    "name": "MOCK / DISRESPECT",
+    "conn": null,
+    "words": ["ABASE", "BELITTLE", "CONDESCEND", "CONTEMPT", "DENIGRATE", "DERIDE", "DISDAIN", "DISPARAGE", "JEER", "LAMPOON", "MOCK", "PATRONIZE", "SARCASTIC", "SARDONIC", "SATIRE", "SCOFF", "SCORN", "SNEER", "SNICKER", "SNIDE", "SPURN", "TAUNT"]
+  },
+  {
+    "name": "PRAISE",
+    "conn": "+",
+    "words": ["ACCLAIM", "ACCOLADE", "APPLAUD", "APPROBATION", "COMMENDABLE", "EULOGY", "EXALT", "EXTOL", "GLORIFY", "HAIL", "LAUD", "LIONIZE", "PLAUDIT", "BLANDISHMENT", "ADULATION"]
+  }
+]

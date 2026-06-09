@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { Cluster, Connotation } from "../data/vocab-data";
 import { ALL_MEMBER_WORDS, ANTONYM_CLUSTERS, CLUSTERS, WORD_INDEX } from "../data/vocab-data";
 import { Store } from "../lib/store";
+import type { SessionReview } from "../lib/store";
 import { displayWord, pick, sample, shuffle, useStore } from "../lib/hooks";
 import { ConnBadge } from "../components/Badges";
 import { ProgressRing } from "../components/ProgressRing";
+import { ShareReviewButton } from "../components/ShareReviewButton";
 
 const ROUND_LEN = 12;
 
@@ -101,12 +103,17 @@ export function QuizGame({ mode, onExit }: { mode: Mode; onExit: () => void }) {
   const [combo, setCombo] = useState(0);
   const [bestCombo, setBestCombo] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
-  const [results, setResults] = useState<{ correct: number; total: number; best: number } | null>(null);
+  const [review, setReview] = useState<SessionReview | null>(null);
+  // Per-round accumulators kept in refs so the recap built at the end always reads
+  // the final values (no stale closures, no extra renders).
+  const pointsRef = useRef(0);
+  const marksRef = useRef<boolean[]>([]);
 
   function answer(opt: LightningOption | AntonymOption) {
     if (picked !== null) return;
     const isCorrect = !!opt.correct;
     setPicked(opt);
+    marksRef.current = [...marksRef.current, isCorrect];
     const word = mode === "antonym" ? (q as AntonymQ).answerWord : (q as LightningQ).word;
     Store.recordWord(word, isCorrect);
     if (isCorrect) {
@@ -114,7 +121,9 @@ export function QuizGame({ mode, onExit }: { mode: Mode; onExit: () => void }) {
       setCombo(nc);
       setBestCombo((b) => Math.max(b, nc));
       setCorrectCount((c) => c + 1);
-      Store.addPoints(8 + Math.min(12, nc * 2));
+      const gain = 8 + Math.min(12, nc * 2);
+      pointsRef.current += gain;
+      Store.addPoints(gain);
     } else {
       setCombo(0);
     }
@@ -124,7 +133,16 @@ export function QuizGame({ mode, onExit }: { mode: Mode; onExit: () => void }) {
   function next() {
     if (idx >= ROUND_LEN) {
       Store.finishRound({ correct: correctCount, wrong: ROUND_LEN - correctCount });
-      setResults({ correct: correctCount, total: ROUND_LEN, best: bestCombo });
+      setReview(Store.addReview({
+        mode,
+        day: Store.todayStr(),
+        ts: Date.now(),
+        correct: correctCount,
+        total: ROUND_LEN,
+        points: pointsRef.current,
+        bestCombo,
+        marks: marksRef.current,
+      }));
       return;
     }
     setQ(gen());
@@ -133,12 +151,13 @@ export function QuizGame({ mode, onExit }: { mode: Mode; onExit: () => void }) {
   }
 
   function restart() {
-    setResults(null); setQ(gen()); setIdx(1); setPicked(null);
+    setReview(null); setQ(gen()); setIdx(1); setPicked(null);
     setCombo(0); setBestCombo(0); setCorrectCount(0);
+    pointsRef.current = 0; marksRef.current = [];
   }
 
-  if (results) {
-    return <QuizResults results={results} onAgain={restart} onExit={onExit} />;
+  if (review) {
+    return <QuizResults review={review} streak={StoreH.get().streak} onAgain={restart} onExit={onExit} />;
   }
 
   const meta = mode === "antonym"
@@ -265,21 +284,29 @@ function AntonymCard({ q, picked, upper, onAnswer }: {
   );
 }
 
-function QuizResults({ results, onAgain, onExit }: {
-  results: { correct: number; total: number; best: number }; onAgain: () => void; onExit: () => void;
+function QuizResults({ review, streak, onAgain, onExit }: {
+  review: SessionReview; streak: number; onAgain: () => void; onExit: () => void;
 }) {
-  const pct = Math.round(results.correct / results.total * 100);
+  const pct = Math.round(review.correct / review.total * 100);
   const msg = pct >= 90 ? "Masterful." : pct >= 70 ? "Strong round." : pct >= 50 ? "Getting there." : "Keep grinding.";
   return (
     <div className="results fade-in" style={{ alignItems: "center", textAlign: "center" }}>
-      <ProgressRing pct={results.correct / results.total} size={150} stroke={12} color="var(--c-green)">
+      <ProgressRing pct={review.correct / review.total} size={150} stroke={12} color="var(--c-green)">
         <span style={{ fontFamily: "var(--font-serif)", fontSize: 40, fontWeight: 600 }}>{pct}%</span>
-        <span className="eyebrow" style={{ marginTop: 2 }}>{results.correct}/{results.total}</span>
+        <span className="eyebrow" style={{ marginTop: 2 }}>{review.correct}/{review.total}</span>
       </ProgressRing>
       <h3 style={{ fontFamily: "var(--font-serif)", fontSize: 28, margin: "14px 0 2px" }}>{msg}</h3>
-      <p className="mode-sub" style={{ textAlign: "center" }}>Best combo this round · ×{results.best}</p>
+      <p className="mode-sub" style={{ textAlign: "center" }}>Best combo this round · ×{review.bestCombo ?? 0}</p>
+      {review.marks && review.marks.length > 0 && (
+        <div className="recap-grid" aria-label="per-question results">
+          {review.marks.map((m, i) => (
+            <span key={i} className={"recap-cell " + (m ? "hit" : "miss")} />
+          ))}
+        </div>
+      )}
       <div className="results-actions" style={{ justifyContent: "center" }}>
         <button className="btn btn-ghost" onClick={onExit}>Hub</button>
+        <ShareReviewButton review={review} streak={streak} className="btn btn-ghost" />
         <button className="btn btn-rust" onClick={onAgain}>Play again →</button>
       </div>
     </div>

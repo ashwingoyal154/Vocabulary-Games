@@ -1,0 +1,1954 @@
+[
+  {
+    "name": "LUCKY",
+    "conn": null,
+    "words": [
+      "FORTUITOUS",
+      "OPPORTUNE",
+      "PROPITIOUS",
+      "SERENDIPITY",
+      "X DESPAIR",
+      "X HAPLESS",
+      "X WRETCHED"
+    ]
+  },
+  {
+    "name": "PAIN / SUFFERING",
+    "conn": "-",
+    "words": [
+      "ADVERSITY",
+      "AFFLICTION",
+      "MISHAP",
+      "ORDEAL",
+      "TRIAL",
+      "TRIBULATION"
+    ]
+  },
+  {
+    "name": "REMEMBERING THE PAST",
+    "conn": null,
+    "words": [
+      "EVOCATIVE",
+      "HINDSIGHT",
+      "NOSTALGIA",
+      "REMINISCENCE",
+      "RETROSPECT",
+      "WISTFUL"
+    ]
+  },
+  {
+    "name": "EXCESSIVE PATRIOTISM",
+    "conn": "-",
+    "words": [
+      "CHAUVINISM",
+      "FANATIC",
+      "JINGOISM",
+      "ZEALOT"
+    ]
+  },
+  {
+    "name": "VERY LITTLE",
+    "conn": "-",
+    "words": [
+      "EXIGUOUS",
+      "MEAGER",
+      "PUNY",
+      "SCANTY",
+      "SKIMPY",
+      "SPARE",
+      "SPARSE"
+    ]
+  },
+  {
+    "name": "CUSTOMARY BEHAVIOR",
+    "conn": null,
+    "words": [
+      "OBTAIN",
+      "WONT"
+    ]
+  },
+  {
+    "name": "WEALTHY",
+    "conn": null,
+    "words": [
+      "OPULENT",
+      "AFFLUENT"
+    ]
+  },
+  {
+    "name": "INCREASE",
+    "conn": null,
+    "words": [
+      "ACCRETION",
+      "AGGRANDIZE",
+      "AUGMENT",
+      "BALLOON",
+      "DILATE",
+      "ENHANCE",
+      "MOUNTING",
+      "PROLIFERATE",
+      "WAX"
+    ]
+  },
+  {
+    "name": "COMBINE",
+    "conn": null,
+    "words": [
+      "AMALGAMATE",
+      "COALITION",
+      "MELD",
+      "SYNTHESIS"
+    ]
+  },
+  {
+    "name": "REDUCE / RESTRICT",
+    "conn": null,
+    "words": [
+      "CONSTRICT",
+      "CONTRACT",
+      "CURTAIL",
+      "DWINDLE",
+      "FLAG",
+      "WANE"
+    ]
+  },
+  {
+    "name": "UNWILLING TO SPEND",
+    "conn": "-",
+    "words": [
+      "CLOSEFISTED",
+      "MISERLY",
+      "NIGGARDLY",
+      "PARSIMONIOUS",
+      "SKINFLINT",
+      "STINGY",
+      "STINT",
+      "TIGHTFISTED",
+      "* THRIFT",
+      "* FRUGAL"
+    ]
+  },
+  {
+    "name": "LESSEN IN INTENSITY",
+    "conn": null,
+    "words": [
+      "ABATE",
+      "EBB",
+      "RECEDE",
+      "SUBSIDE"
+    ]
+  },
+  {
+    "name": "RELEVANT",
+    "conn": null,
+    "words": [
+      "APPOSITE",
+      "APROPOS",
+      "GERMANE",
+      "PERTINENT"
+    ]
+  },
+  {
+    "name": "EXCESS",
+    "conn": null,
+    "words": [
+      "ABOUND",
+      "BARRAGE",
+      "BOUNTEOUS",
+      "COPIOUS",
+      "GLUT",
+      "INUNDATE",
+      "MYRIAD",
+      "PLETHORA",
+      "PROFUSE",
+      "PROLIFIC",
+      "STEEPED",
+      "SURFEIT",
+      "SURGE",
+      "TEEMING"
+    ]
+  },
+  {
+    "name": "UNCLEAR IN MEANING",
+    "conn": null,
+    "words": [
+      "AMBIVALENT",
+      "AMBIGUOUS",
+      "EQUIVOCAL"
+    ]
+  },
+  {
+    "name": "EXPLAIN TOO MUCH",
+    "conn": null,
+    "words": [
+      "BELABOR",
+      "X UNDERSTATEMENT"
+    ]
+  },
+  {
+    "name": "CANNOT BE DEFEATED",
+    "conn": null,
+    "words": [
+      "IMPERVIOUS",
+      "INDOMITABLE",
+      "INVINCIBLE"
+    ]
+  },
+  {
+    "name": "SHORTAGE / LACK OF",
+    "conn": "-",
+    "words": [
+      "DEARTH",
+      "DEFICIT",
+      "PAUCITY",
+      "VACUOUS"
+    ]
+  },
+  {
+    "name": "POOR",
+    "conn": "-",
+    "words": [
+      "BANKRUPT",
+      "DESTITUTE",
+      "IMPECUNIOUS",
+      "IMPOVERISHED",
+      "INDIGENT",
+      "INSOLVENT",
+      "PENURY",
+      "X SOLVENT"
+    ]
+  },
+  {
+    "name": "VERY HIGH PRICE",
+    "conn": "-",
+    "words": [
+      "EXORBITANT",
+      "GOUGING",
+      "PROHIBITIVE"
+    ]
+  },
+  {
+    "name": "SPEND LAVISHLY / WASTE",
+    "conn": "-",
+    "words": [
+      "PRODIGAL",
+      "PROFLIGATE",
+      "SPENDTHRIFT",
+      "SQUANDER"
+    ]
+  },
+  {
+    "name": "SURE / CERTAIN",
+    "conn": null,
+    "words": [
+      "ABSOLUTE",
+      "CATEGORICAL",
+      "CERTITUDE",
+      "CONVICTION",
+      "EMPHATIC",
+      "INCONTROVERTIBLE",
+      "UNQUALIFIED",
+      "X CONTINGENT",
+      "X PROVISIONAL",
+      "X QUALIFY",
+      "X TENTATIVE"
+    ]
+  },
+  {
+    "name": "NERVOUS / RESTLESS",
+    "conn": null,
+    "words": [
+      "RESTIVE",
+      "SKITTISH"
+    ]
+  },
+  {
+    "name": "GREED",
+    "conn": "-",
+    "words": [
+      "AVARICE",
+      "COVETOUS",
+      "CUPIDITY",
+      "RAPACIOUS",
+      "RAVENOUS",
+      "VORACIOUS"
+    ]
+  },
+  {
+    "name": "OVERLY NOISY",
+    "conn": "-",
+    "words": [
+      "CACOPHONY",
+      "CLAMOR",
+      "CLANGOR",
+      "DIN",
+      "DISCORDANT",
+      "OBSTREPEROUS",
+      "RAUCOUS",
+      "STRIDENT",
+      "UPROAR",
+      "VOCIFEROUS",
+      "* BOISTEROUS",
+      "# INAUDIBLE"
+    ]
+  },
+  {
+    "name": "PLEASANT SOUNDING",
+    "conn": "+",
+    "words": [
+      "EUPHONY",
+      "MELODIOUS",
+      "MELLIFLUOUS"
+    ]
+  },
+  {
+    "name": "SUPPORTER",
+    "conn": null,
+    "words": [
+      "ADVOCATE",
+      "ALLY",
+      "CHAMPION",
+      "ENDORSE",
+      "ESPOUSE",
+      "LOBBYIST",
+      "PROPONENT",
+      "PROTAGONIST",
+      "TOUT",
+      "X ADVERSARY",
+      "X ANTAGONIST",
+      "X DETRACTOR",
+      "X FOE",
+      "X IMPUGN",
+      "X INIMICAL",
+      "X OPPONENT"
+    ]
+  },
+  {
+    "name": "PLANNED / DELIBERATE",
+    "conn": null,
+    "words": [
+      "CALCULATED",
+      "DELIBERATE",
+      "FORETHOUGHT",
+      "INTENTIONAL",
+      "PREMEDITATED",
+      "STUDIED",
+      "X EXTEMPORANEOUS",
+      "X IMPETUOUS",
+      "X IMPROMPTU",
+      "X IMPROVISE",
+      "X OFFHAND"
+    ]
+  },
+  {
+    "name": "EXTRA / UNNECESSARY",
+    "conn": "-",
+    "words": [
+      "EXTRANEOUS",
+      "REDUNDANT",
+      "SUPERFLUOUS"
+    ]
+  },
+  {
+    "name": "RESOLUTE / DETERMINED",
+    "conn": "+",
+    "words": [
+      "DOGGED",
+      "ENDURE",
+      "IMMUTABLE",
+      "INDEFATIGABLE",
+      "PERSEVERE",
+      "PERSISTENCE",
+      "RESOLUTE",
+      "STEADFAST",
+      "TENACIOUS"
+    ]
+  },
+  {
+    "name": "TO OBJECT / RESIST",
+    "conn": null,
+    "words": [
+      "DEFY",
+      "DEMUR",
+      "DISSENT",
+      "QUIBBLE",
+      "TAKE ISSUE WITH"
+    ]
+  },
+  {
+    "name": "TO MAKE UP / CREATE",
+    "conn": null,
+    "words": [
+      "CONCOCT",
+      "DEVISE",
+      "FORMULATE"
+    ]
+  },
+  {
+    "name": "ACCEPT / AGREE / GIVE IN",
+    "conn": null,
+    "words": [
+      "ACCEDE",
+      "ACQUIESCE",
+      "AMENABLE",
+      "ASSENT",
+      "COMPLIANT",
+      "COMPLY",
+      "CONCEDE",
+      "CONCUR",
+      "PLIANT",
+      "RELENT",
+      "SUCCUMB",
+      "YIELD",
+      "* DOCILE",
+      "* MALLEABLE"
+    ]
+  },
+  {
+    "name": "TO DISPROVE",
+    "conn": null,
+    "words": [
+      "BELIE",
+      "DEBUNK",
+      "DISCREDIT",
+      "EXPOSTULATE",
+      "REBUT",
+      "REFUTE",
+      "REMONSTRATE"
+    ]
+  },
+  {
+    "name": "CANCEL / TAKE BACK",
+    "conn": null,
+    "words": [
+      "ANNUL",
+      "DISAVOW",
+      "GAINSAY",
+      "NULLIFY",
+      "RECANT",
+      "RENEGE",
+      "REPEAL",
+      "REPUDIATE",
+      "RESCIND",
+      "RETRACT",
+      "REVOKE",
+      "VOID"
+    ]
+  },
+  {
+    "name": "ENERGIZING",
+    "conn": "+",
+    "words": [
+      "GALVANIZING",
+      "INVIGORATING",
+      "REVITALIZING",
+      "ROUSING"
+    ]
+  },
+  {
+    "name": "STUBBORN",
+    "conn": "-",
+    "words": [
+      "ADAMANT",
+      "DEFIANT",
+      "INCORRIGIBLE",
+      "INTRACTABLE",
+      "INTRANSIGENT",
+      "OBDURATE",
+      "OBSTINATE",
+      "PERTINACIOUS",
+      "PERVERSE",
+      "RECALCITRANT",
+      "REFRACTORY",
+      "WILLFUL"
+    ]
+  },
+  {
+    "name": "BREAK A RULE",
+    "conn": null,
+    "words": [
+      "BREACH",
+      "FLOUT",
+      "TRANSGRESS",
+      "X ABIDE",
+      "X ADHERE"
+    ]
+  },
+  {
+    "name": "FAMOUS PERSON",
+    "conn": null,
+    "words": [
+      "EMINENT",
+      "LUMINARY",
+      "PRE-EMINENT",
+      "STATURE"
+    ]
+  },
+  {
+    "name": "DISLOYALTY",
+    "conn": "-",
+    "words": [
+      "BETRAY",
+      "INSIDIOUS",
+      "PERFIDY",
+      "X FEALTY",
+      "X FIDELITY"
+    ]
+  },
+  {
+    "name": "JUST BEGINNING / DEVELOPING",
+    "conn": null,
+    "words": [
+      "EMBRYONIC",
+      "FLEDGLING",
+      "INCHOATE",
+      "INCIPIENT",
+      "NASCENT",
+      "RUDIMENTARY"
+    ]
+  },
+  {
+    "name": "EXPERIENCED",
+    "conn": "+",
+    "words": [
+      "SEASONED",
+      "VETERAN"
+    ]
+  },
+  {
+    "name": "EXPERT",
+    "conn": "+",
+    "words": [
+      "CONNOISSEUR",
+      "VIRTUOSO",
+      "X LAYPERSON"
+    ]
+  },
+  {
+    "name": "SUMMARY",
+    "conn": null,
+    "words": [
+      "CRUX",
+      "GIST",
+      "PRÉCIS",
+      "PURPORT",
+      "SYNOPSIS"
+    ]
+  },
+  {
+    "name": "FEELING GUILTY",
+    "conn": null,
+    "words": [
+      "CONTRITE",
+      "PENITENT",
+      "REMORSE",
+      "RUEFUL"
+    ]
+  },
+  {
+    "name": "GAP / PAUSE",
+    "conn": null,
+    "words": [
+      "ABEYANCE",
+      "HIATUS",
+      "LULL",
+      "MORATORIUM",
+      "RESPITE"
+    ]
+  },
+  {
+    "name": "LOSE STRENGTH / WEAKEN",
+    "conn": "-",
+    "words": [
+      "ATROPHY",
+      "ATTENUATE",
+      "ATTRITION",
+      "DEBILITATE",
+      "DEGENERATE",
+      "DEGRADATION",
+      "EFFETE",
+      "ENERVATE",
+      "ENFEEBLE",
+      "FLAGGING",
+      "SAP",
+      "WILT",
+      "WITHER"
+    ]
+  },
+  {
+    "name": "THRIVING / RESTORED",
+    "conn": "+",
+    "words": [
+      "BURGEON",
+      "REGENERATE",
+      "REJUVENATE",
+      "RESUSCITATE",
+      "REVIVE"
+    ]
+  },
+  {
+    "name": "IDEALISTIC",
+    "conn": null,
+    "words": [
+      "QUIXOTIC",
+      "UTOPIAN"
+    ]
+  },
+  {
+    "name": "STRANGE / ODD",
+    "conn": null,
+    "words": [
+      "ECCENTRIC",
+      "FOIBLE",
+      "IDIOSYNCRASY",
+      "QUIRKINESS"
+    ]
+  },
+  {
+    "name": "DIFFICULT",
+    "conn": "-",
+    "words": [
+      "ARDUOUS",
+      "CUMBERSOME",
+      "ENCUMBER",
+      "EXACTING",
+      "ONEROUS",
+      "PONDEROUS",
+      "X FACILE"
+    ]
+  },
+  {
+    "name": "RIGHT TO VOTE",
+    "conn": null,
+    "words": [
+      "ENFRANCHISE",
+      "SUFFRAGE"
+    ]
+  },
+  {
+    "name": "CORRECT / REPAIR",
+    "conn": null,
+    "words": [
+      "AMEND",
+      "ATONE",
+      "DISABUSE",
+      "EXPIATE",
+      "INDEMNIFY",
+      "REDEMPTION",
+      "REDRESS",
+      "REPARATION",
+      "RESTITUTION"
+    ]
+  },
+  {
+    "name": "CLEAR (PHYSICAL & MEANING)",
+    "conn": "+",
+    "words": [
+      "CLARITY",
+      "ELUCIDATE",
+      "EXPOSITION",
+      "EXPOUND",
+      "LIMPID",
+      "LUCID",
+      "PELLUCID"
+    ]
+  },
+  {
+    "name": "UNCLEAR / HAZY",
+    "conn": "-",
+    "words": [
+      "AMORPHOUS",
+      "BECLOUD",
+      "CLOUD",
+      "INDISTINCT",
+      "MURKY",
+      "NEBULOUS"
+    ]
+  },
+  {
+    "name": "CONFUSING SITUATION",
+    "conn": "-",
+    "words": [
+      "DILEMMA",
+      "PLIGHT",
+      "PREDICAMENT",
+      "QUANDARY"
+    ]
+  },
+  {
+    "name": "HAPPENING BEFORE",
+    "conn": null,
+    "words": [
+      "ANTECEDENT",
+      "FORERUNNER",
+      "HARBINGER",
+      "PRECEDENT",
+      "PRECURSOR"
+    ]
+  },
+  {
+    "name": "IMMORAL",
+    "conn": "-",
+    "words": [
+      "DEBAUCHERY",
+      "DECADENT",
+      "DEGENERATE",
+      "DEPRAVITY",
+      "DISSOLUTE",
+      "IMPROBITY",
+      "WAYWARD"
+    ]
+  },
+  {
+    "name": "WITHOUT MISTAKES / PERFECT",
+    "conn": "+",
+    "words": [
+      "FLAWLESS",
+      "IMMACULATE",
+      "IMPECCABLE",
+      "INFALLIBLE",
+      "INTEGRITY",
+      "IRREPROACHABLE",
+      "PROBITY",
+      "RECTITUDE",
+      "UNIMPEACHABLE"
+    ]
+  },
+  {
+    "name": "RESTRAIN / CONFINE",
+    "conn": null,
+    "words": [
+      "BRIDLE",
+      "CIRCUMSCRIBE",
+      "CONSTRAINT",
+      "FETTER",
+      "REIN",
+      "SECURE",
+      "SHACKLE",
+      "X EXTRICATE"
+    ]
+  },
+  {
+    "name": "HARMFUL / CURSE",
+    "conn": "-",
+    "words": [
+      "ANATHEMA",
+      "BALEFUL",
+      "BANE",
+      "BLIGHT",
+      "DELETERIOUS",
+      "DETRIMENTAL",
+      "MALEDICTION",
+      "MALIGNANT",
+      "PERNICIOUS"
+    ]
+  },
+  {
+    "name": "BORING & REPETITIOUS",
+    "conn": "-",
+    "words": [
+      "MONOTONOUS",
+      "PLOD",
+      "TEDIOUS"
+    ]
+  },
+  {
+    "name": "CHAOS / CONFUSION",
+    "conn": "-",
+    "words": [
+      "BEDLAM",
+      "PANDEMONIUM",
+      "TUMULTUOUS",
+      "TURBULENCE",
+      "TURMOIL",
+      "UPHEAVAL"
+    ]
+  },
+  {
+    "name": "CRIMINALS / LAWBREAKERS",
+    "conn": "-",
+    "words": [
+      "FELON",
+      "MENACE",
+      "MISCREANT",
+      "ROGUE",
+      "SCOUNDREL"
+    ]
+  },
+  {
+    "name": "CHEAT / DECEIVE",
+    "conn": "-",
+    "words": [
+      "ARTFUL",
+      "ARTIFICE",
+      "BILK",
+      "CHICANERY",
+      "CRAFTY",
+      "DUPLICITY",
+      "DUPE",
+      "FLEECE",
+      "GUILE",
+      "GULLED",
+      "HOODWINK",
+      "MISLEAD",
+      "SWINDLE",
+      "WILY"
+    ]
+  },
+  {
+    "name": "INNOCENT / WITHOUT DECEPTION",
+    "conn": null,
+    "words": [
+      "ARTLESS",
+      "CREDENCE",
+      "CREDULOUS",
+      "GUILELESS",
+      "GULLIBLE",
+      "INGENUOUS",
+      "NAÏVE",
+      "JEJUNE",
+      "UNSOPHISTICATED"
+    ]
+  },
+  {
+    "name": "REPEAT",
+    "conn": null,
+    "words": [
+      "RECAPITULATE",
+      "REHASH",
+      "REITERATE"
+    ]
+  },
+  {
+    "name": "DISASTER",
+    "conn": "-",
+    "words": [
+      "CALAMITOUS",
+      "CATACLYSM",
+      "CATASTROPHE",
+      "DEBACLE",
+      "X COUP"
+    ]
+  },
+  {
+    "name": "DOUBTFUL",
+    "conn": "-",
+    "words": [
+      "APPREHENSIVE",
+      "CYNICAL",
+      "DUBIOUS",
+      "QUESTIONABLE",
+      "SKEPTICAL"
+    ]
+  },
+  {
+    "name": "ACT PROPERLY / WELL-BEHAVED",
+    "conn": "+",
+    "words": [
+      "DECOROUS",
+      "DEMURE",
+      "PRIM",
+      "PROPRIETY",
+      "SEEMLY",
+      "X EXECRABLE",
+      "X FLAGRANT",
+      "X MALFEASANCE",
+      "X UNBECOMING"
+    ]
+  },
+  {
+    "name": "SHINING",
+    "conn": "+",
+    "words": [
+      "EFFULGENT",
+      "LUMINOUS",
+      "LUSTROUS",
+      "SCINTILLATING"
+    ]
+  },
+  {
+    "name": "SELF-CONTROL",
+    "conn": "+",
+    "words": [
+      "ABSTEMIOUS",
+      "ABSTINENCE",
+      "CELIBACY",
+      "FORBEAR",
+      "MODERATE",
+      "REFRAIN",
+      "TEMPERATE",
+      "X INDULGE"
+    ]
+  },
+  {
+    "name": "PRACTICAL / POSSIBLE",
+    "conn": null,
+    "words": [
+      "CONCEIVABLE",
+      "CREDIBLE",
+      "FEASIBLE",
+      "PLAUSIBLE",
+      "PRAGMATIC",
+      "UTILITARIAN",
+      "VERISIMILAR",
+      "VIABLE"
+    ]
+  },
+  {
+    "name": "OVERLY PROUD",
+    "conn": "-",
+    "words": [
+      "ARROGANT",
+      "BOMBASTIC",
+      "BRAGGART",
+      "BRAVADO",
+      "CONCEITED",
+      "EGOTISTICAL",
+      "HAUGHTY",
+      "HUBRIS",
+      "POMPOUS",
+      "SUPERCILIOUS",
+      "SWAGGER",
+      "VAINGLORIOUS",
+      "X UNASSUMING"
+    ]
+  },
+  {
+    "name": "LACK OF RESPECT",
+    "conn": "-",
+    "words": [
+      "AUDACIOUS",
+      "BRAZEN",
+      "CHEEKY",
+      "EFFRONTERY",
+      "GALL",
+      "IMPERTINENT",
+      "IMPUDENT",
+      "INSOLENT",
+      "NERVE",
+      "PRESUMPTUOUS",
+      "TEMERITY"
+    ]
+  },
+  {
+    "name": "SHOW-OFF",
+    "conn": "-",
+    "words": [
+      "FLAMBOYANCE",
+      "FLAUNT",
+      "GRANDILOQUENT",
+      "GRANDIOSE",
+      "OSTENTATIOUS",
+      "PRETENTIOUS",
+      "* PANACHE"
+    ]
+  },
+  {
+    "name": "TALKATIVE / WORDY",
+    "conn": null,
+    "words": [
+      "GARRULOUS",
+      "LOQUACIOUS",
+      "PROLIX",
+      "VERBIAGE",
+      "VERBOSE",
+      "VOLUBLE"
+    ]
+  },
+  {
+    "name": "SPEAK LESS / FEW WORDS",
+    "conn": null,
+    "words": [
+      "ABBREVIATED",
+      "ABRIDGE",
+      "BREVITY",
+      "CONDENSE",
+      "LACONIC",
+      "MONOSYLLABIC",
+      "PITHY",
+      "RETICENT",
+      "SUCCINCT",
+      "TACITURN"
+    ]
+  },
+  {
+    "name": "PRETENSE OF MORALITY",
+    "conn": "-",
+    "words": [
+      "CANT",
+      "HYPOCRITICAL",
+      "PRIG",
+      "PRUDE",
+      "SANCTIMONIOUS"
+    ]
+  },
+  {
+    "name": "GENEROUS SUPPORTER",
+    "conn": "+",
+    "words": [
+      "ALTRUIST",
+      "BENEFACTOR",
+      "BENEFICENT",
+      "BENEVOLENT",
+      "HUMANE",
+      "MAGNANIMOUS",
+      "MUNIFICENT",
+      "PATRON",
+      "PHILANTHROPIST"
+    ]
+  },
+  {
+    "name": "PREDICTION",
+    "conn": null,
+    "words": [
+      "AUGUR",
+      "AUGURY",
+      "FORECAST",
+      "FORESIGHT",
+      "FORESEE",
+      "FORETELL",
+      "PRESAGE",
+      "PRESCIENCE",
+      "PROGNOSIS"
+    ]
+  },
+  {
+    "name": "SIGN (WARNING)",
+    "conn": "-",
+    "words": [
+      "FOREBODE",
+      "FORESHADOW",
+      "PORTEND",
+      "PORTENT",
+      "PREMONITION"
+    ]
+  },
+  {
+    "name": "THREATENING",
+    "conn": null,
+    "words": [
+      "OMINOUS",
+      "SINISTER"
+    ]
+  },
+  {
+    "name": "VERY ANGRY",
+    "conn": null,
+    "words": [
+      "ENRAGE",
+      "FUME",
+      "GLOWER",
+      "INCENSE",
+      "INFURIATE",
+      "IRATE",
+      "IRE",
+      "LIVID",
+      "RABID",
+      "SEETHE",
+      "SMOLDER",
+      "WRATH"
+    ]
+  },
+  {
+    "name": "DETAILED KNOWLEDGE / INTELLECTUAL",
+    "conn": null,
+    "words": [
+      "CEREBRAL",
+      "ERUDITE",
+      "PUNDIT"
+    ]
+  },
+  {
+    "name": "SKILLFUL",
+    "conn": null,
+    "words": [
+      "ADEPT",
+      "ADROIT",
+      "AGILE",
+      "CONSUMMATE",
+      "DEFT",
+      "DEXTEROUS",
+      "PROFICIENT",
+      "PROWESS",
+      "X INEPT",
+      "X MALADROIT"
+    ]
+  },
+  {
+    "name": "FLEXIBLE",
+    "conn": null,
+    "words": [
+      "LIMBER",
+      "LITHE",
+      "NIMBLE",
+      "SUPPLE"
+    ]
+  },
+  {
+    "name": "HAVING TWISTS / TURNS",
+    "conn": null,
+    "words": [
+      "CIRCUITOUS",
+      "CONVOLUTED",
+      "INTERTWINED",
+      "INVOLVED",
+      "MEANDER",
+      "SINUOUS",
+      "TORTUOUS"
+    ]
+  },
+  {
+    "name": "INCLINATION",
+    "conn": null,
+    "words": [
+      "AFFINITY",
+      "APTITUDE",
+      "BENT",
+      "DISPOSED",
+      "INCLINED",
+      "PENCHANT",
+      "PREDILECTION",
+      "PREDISPOSITION",
+      "PROCLIVITY",
+      "PROPENSITY"
+    ]
+  },
+  {
+    "name": "HORRIFYING / SHOCKING",
+    "conn": null,
+    "words": [
+      "AGHAST",
+      "APPALLING",
+      "EGREGIOUS",
+      "GHASTLY",
+      "GRISLY",
+      "GROSS",
+      "GROTESQUE",
+      "GRUESOME",
+      "HEINOUS",
+      "HIDEOUS",
+      "HORRENDOUS",
+      "MONSTROUS",
+      "MORBID",
+      "UNSIGHTLY",
+      "VILE"
+    ]
+  },
+  {
+    "name": "ATTRACTIVE",
+    "conn": null,
+    "words": [
+      "AESTHETIC",
+      "COMELY"
+    ]
+  },
+  {
+    "name": "SEPARATE",
+    "conn": null,
+    "words": [
+      "DISJOINTED",
+      "POLARIZE",
+      "SEGREGATE",
+      "X NEXUS"
+    ]
+  },
+  {
+    "name": "VERY TALENTED (CHILD)",
+    "conn": null,
+    "words": [
+      "PRODIGY",
+      "PRECOCIOUS"
+    ]
+  },
+  {
+    "name": "FOOLISH TALK",
+    "conn": null,
+    "words": [
+      "BABBLE",
+      "BLATHER",
+      "DRAWL",
+      "DRIVEL",
+      "GIBBERISH",
+      "JABBER",
+      "NONSENSICAL",
+      "PRATE",
+      "PRATTLE"
+    ]
+  },
+  {
+    "name": "AVOID / DODGE",
+    "conn": null,
+    "words": [
+      "AVERT",
+      "CIRCUMVENT",
+      "DEFLECT",
+      "ELUDE",
+      "EVADE",
+      "EVASIVE",
+      "PARRY",
+      "SHIRK",
+      "SHUNT",
+      "SKIRT",
+      "SWERVE",
+      "X HEAD-ON"
+    ]
+  },
+  {
+    "name": "AWKWARD / CLUMSY",
+    "conn": null,
+    "words": [
+      "FECKLESS",
+      "FUMBLE",
+      "GAUCHE",
+      "GAWKY",
+      "UNGAINLY"
+    ]
+  },
+  {
+    "name": "OPTIMISTS",
+    "conn": null,
+    "words": [
+      "BUOYANT",
+      "SANGUINE"
+    ]
+  },
+  {
+    "name": "BE SLOW / WASTE TIME",
+    "conn": null,
+    "words": [
+      "DALLY",
+      "DAWDLE",
+      "DILATORY",
+      "DILLY DALLY",
+      "LAGGARD",
+      "LINGER",
+      "MALINGER"
+    ]
+  },
+  {
+    "name": "TO DO WITH TEACHING",
+    "conn": null,
+    "words": [
+      "PEDANTIC",
+      "DIDACTIC"
+    ]
+  },
+  {
+    "name": "HATE",
+    "conn": null,
+    "words": [
+      "ABHOR",
+      "ANIMOSITY",
+      "ANTIPATHY",
+      "AVERSION",
+      "DESPICABLE",
+      "DETEST",
+      "LOATHE",
+      "ODIOUS",
+      "REPEL",
+      "REPUGNANT",
+      "REPULSION"
+    ]
+  },
+  {
+    "name": "OLD FASHIONED / OUTDATED",
+    "conn": null,
+    "words": [
+      "ANTEDILUVIAN",
+      "ANTIQUATED",
+      "ARCHAIC",
+      "DATED",
+      "OBSOLETE",
+      "OUTMODED",
+      "QUAINT"
+    ]
+  },
+  {
+    "name": "TIME RELATED WORDS",
+    "conn": null,
+    "words": [
+      "ANACHRONISM",
+      "CHRONICLE",
+      "CHRONOLOGICAL"
+    ]
+  },
+  {
+    "name": "CAUTIOUS / CAREFUL",
+    "conn": null,
+    "words": [
+      "CHARY",
+      "CIRCUMSPECT",
+      "GINGERLY",
+      "HEEDFUL",
+      "LEERY",
+      "PRUDENT",
+      "WARY",
+      "X DAREDEVIL",
+      "X FOLLY",
+      "X FOOLHARDY",
+      "X RASH",
+      "X RECKLESS"
+    ]
+  },
+  {
+    "name": "MINOR SCOLDING / WARNING",
+    "conn": null,
+    "words": [
+      "ADMONISH",
+      "CENSURE",
+      "CHASTISE",
+      "CHIDE",
+      "REBUKE",
+      "REPRIMAND",
+      "REPROACH",
+      "REPROVE"
+    ]
+  },
+  {
+    "name": "DISAPPROVE / SCOLD",
+    "conn": null,
+    "words": [
+      "ASSAIL",
+      "BERATE",
+      "CASTIGATE",
+      "DECRY",
+      "DENOUNCE",
+      "DENUNCIATION",
+      "DIATRIBE",
+      "EPITHET",
+      "EXCORIATE",
+      "FULMINATE",
+      "INVECTIVE",
+      "LAMBASTE",
+      "RANT",
+      "REVILE",
+      "RILE",
+      "TIRADE",
+      "UPBRAID",
+      "VITUPERATIVE"
+    ]
+  },
+  {
+    "name": "TO DEFEAT",
+    "conn": null,
+    "words": [
+      "DRUB",
+      "PULVERIZE",
+      "ROUT",
+      "SUBJUGATE",
+      "VANQUISH",
+      "# CAPITULATE"
+    ]
+  },
+  {
+    "name": "REBELLIOUS / UNCONVENTIONAL",
+    "conn": null,
+    "words": [
+      "DISSIDENT",
+      "HERESY",
+      "HERETICAL",
+      "HETERODOX",
+      "ICONOCLAST",
+      "INSURGENT",
+      "INSURRECTION",
+      "MAVERICK",
+      "NONCONFORMIST",
+      "RADICAL",
+      "X REACTIONARY",
+      "RENEGADE",
+      "REVOLUTIONARY",
+      "SUBVERSIVE",
+      "UNCONVENTIONAL",
+      "X CONSERVATIVE",
+      "X CONVENTIONAL",
+      "X ORTHODOX"
+    ]
+  },
+  {
+    "name": "COMPLAIN (LOW DEGREE)",
+    "conn": null,
+    "words": [
+      "CAPTIOUS",
+      "CARPING",
+      "GROUSE",
+      "QUERULOUS"
+    ]
+  },
+  {
+    "name": "DANGER",
+    "conn": null,
+    "words": [
+      "JEOPARDY",
+      "PITFALL",
+      "PRECARIOUS",
+      "SNARE"
+    ]
+  },
+  {
+    "name": "BITTER FEELINGS / ILL-WILL",
+    "conn": null,
+    "words": [
+      "MALEVOLENCE",
+      "MALICE",
+      "RANCOR",
+      "VICIOUS",
+      "VIRULENT"
+    ]
+  },
+  {
+    "name": "TROUBLED",
+    "conn": null,
+    "words": [
+      "BESET",
+      "BELEAGUERED",
+      "PLAGUED"
+    ]
+  },
+  {
+    "name": "MOCK / DISRESPECT",
+    "conn": null,
+    "words": [
+      "ABASE",
+      "BELITTLE",
+      "CONDESCEND",
+      "CONTEMPT",
+      "DENIGRATE",
+      "DERIDE",
+      "DISDAIN",
+      "DISPARAGE",
+      "JEER",
+      "LAMPOON",
+      "MOCK",
+      "PATRONIZE",
+      "SARCASTIC",
+      "SARDONIC",
+      "SATIRE",
+      "SCOFF",
+      "SCORN",
+      "SNEER",
+      "SNICKER",
+      "SNIDE",
+      "SPURN",
+      "TAUNT"
+    ]
+  },
+  {
+    "name": "PRAISE",
+    "conn": "+",
+    "words": [
+      "ACCLAIM",
+      "ACCOLADE",
+      "APPLAUD",
+      "APPROBATION",
+      "COMMENDABLE",
+      "EULOGY",
+      "EXALT",
+      "EXTOL",
+      "GLORIFY",
+      "HAIL",
+      "LAUD",
+      "LIONIZE",
+      "PLAUDIT",
+      "BLANDISHMENT",
+      "ADULATION"
+    ]
+  },
+  {
+    "name": "EQUALITY",
+    "conn": null,
+    "words": [
+      "COMMENSURATE",
+      "PARITY",
+      "PEERS",
+      "X DISPARATE"
+    ]
+  },
+  {
+    "name": "AGREEMENT / HARMONY",
+    "conn": null,
+    "words": [
+      "ACCORD",
+      "CONCORD",
+      "CONFORMITY",
+      "CONGRUOUS",
+      "CONSONANCE",
+      "HARMONIOUS",
+      "X DISCORD",
+      "X DISSONANCE",
+      "X FACTION",
+      "X INCOMPATIBLE"
+    ]
+  },
+  {
+    "name": "SPLIT / GAP",
+    "conn": null,
+    "words": [
+      "CHASM",
+      "DICHOTOMY",
+      "GULF",
+      "RIFT",
+      "SCHISM"
+    ]
+  },
+  {
+    "name": "AGGRESSIVE / ARGUMENTATIVE",
+    "conn": null,
+    "words": [
+      "BELLICOSE",
+      "BELLIGERENT",
+      "CONTENTIOUS",
+      "DISPUTATIOUS",
+      "FRACTIOUS",
+      "HOSTILITY",
+      "LITIGIOUS",
+      "POLEMICAL",
+      "PUGNACIOUS",
+      "TRUCULENT"
+    ]
+  },
+  {
+    "name": "ARGUE / FIGHT",
+    "conn": null,
+    "words": [
+      "ALTERCATION",
+      "BICKER",
+      "BRAWL",
+      "COMBAT",
+      "CONTEND",
+      "QUIBBLE",
+      "ROW",
+      "SCUFFLE",
+      "SQUABBLE",
+      "TIFF",
+      "TUSSLE",
+      "X TRUCE"
+    ]
+  },
+  {
+    "name": "SURPRISE / CONFUSE",
+    "conn": null,
+    "words": [
+      "ASTOUND",
+      "BAFFLE",
+      "BEFUDDLE",
+      "BEMUSE",
+      "BEWILDER",
+      "CONFOUND",
+      "FLABBERGASTED",
+      "FOXED",
+      "NONPLUSSED",
+      "OBFUSCATE",
+      "PERPLEX",
+      "STUPEFY"
+    ]
+  },
+  {
+    "name": "EXCESSIVE FLATTERY",
+    "conn": "-",
+    "words": [
+      "FAWN",
+      "FULSOME",
+      "OBSEQUIOUS",
+      "SYCOPHANT"
+    ]
+  },
+  {
+    "name": "INSULTING WORDS",
+    "conn": null,
+    "words": [
+      "DEPRECATORY",
+      "DEROGATORY",
+      "PEJORATIVE"
+    ]
+  },
+  {
+    "name": "CALM",
+    "conn": null,
+    "words": [
+      "APLOMB",
+      "COMPOSURE",
+      "EQUANIMITY",
+      "IMPASSIVE",
+      "IMPERTURBABLE",
+      "NONCHALANT",
+      "PHLEGMATIC",
+      "PLACID",
+      "SERENE",
+      "STAID",
+      "STOLID",
+      "TRANQUIL"
+    ]
+  },
+  {
+    "name": "INDIFFERENT",
+    "conn": null,
+    "words": [
+      "APATHY",
+      "STOIC"
+    ]
+  },
+  {
+    "name": "MAKE HOSTILE",
+    "conn": null,
+    "words": [
+      "ALIENATE",
+      "ANTAGONIZE",
+      "ESTRANGE"
+    ]
+  },
+  {
+    "name": "INCLUDE EVERYTHING",
+    "conn": null,
+    "words": [
+      "COMPREHENSIVE",
+      "ENCOMPASS",
+      "EXPANSIVE",
+      "PERVASIVE"
+    ]
+  },
+  {
+    "name": "PRESENT EVERYWHERE",
+    "conn": null,
+    "words": [
+      "UBIQUITOUS",
+      "OMNIPRESENT"
+    ]
+  },
+  {
+    "name": "NARROW MINDED / REGIONAL",
+    "conn": null,
+    "words": [
+      "INSULAR",
+      "MYOPIC",
+      "PAROCHIAL",
+      "PROVINCIAL"
+    ]
+  },
+  {
+    "name": "BIASED",
+    "conn": null,
+    "words": [
+      "BIGOT",
+      "DISCRIMINATORY",
+      "X DISINTERESTED",
+      "PARTISAN",
+      "PREJUDICED"
+    ]
+  },
+  {
+    "name": "IMPARTIAL",
+    "conn": null,
+    "words": [
+      "DISPASSIONATE",
+      "EGALITARIAN",
+      "EQUITABLE",
+      "EVENHANDED",
+      "OBJECTIVITY"
+    ]
+  },
+  {
+    "name": "NOT SERIOUS / DISRESPECT",
+    "conn": "-",
+    "words": [
+      "FLIPPANT",
+      "FRIVOLOUS",
+      "FRIVOLITY",
+      "INSOUCIANT",
+      "LEVITY",
+      "X GRAVE",
+      "X GRAVITY"
+    ]
+  },
+  {
+    "name": "DISTURBED / AGITATED",
+    "conn": null,
+    "words": [
+      "CONSTERNATION",
+      "DISCONCERT",
+      "DISMAY",
+      "DISTRAUGHT",
+      "FAZE",
+      "FLUSTER",
+      "FOMENT",
+      "FRENETIC",
+      "HYSTERICAL",
+      "IMPLACABLE",
+      "OVERWROUGHT",
+      "PERTURB"
+    ]
+  },
+  {
+    "name": "OVERLY OBEDIENT",
+    "conn": "-",
+    "words": [
+      "GROVEL",
+      "SERVILE",
+      "SLAVISH",
+      "SUBSERVIENT",
+      "SUPPLICANT"
+    ]
+  },
+  {
+    "name": "SUPPRESS / END",
+    "conn": null,
+    "words": [
+      "QUASH",
+      "QUELL",
+      "REPRESS",
+      "SCOTCH",
+      "SUBDUE",
+      "SUPPRESS"
+    ]
+  },
+  {
+    "name": "DOMINATING",
+    "conn": "-",
+    "words": [
+      "ABSOLUTE",
+      "AUTHORITATIVE",
+      "AUTOCRAT",
+      "DESPOT",
+      "DOGMATIC",
+      "HEGEMONY",
+      "IMPERIOUS",
+      "MARTINET",
+      "TOTALITARIAN",
+      "TYRANT"
+    ]
+  },
+  {
+    "name": "SHORT LIVED",
+    "conn": null,
+    "words": [
+      "EPHEMERAL",
+      "EVANESCENT",
+      "FLEETING",
+      "TRANSIENT",
+      "TRANSITORY"
+    ]
+  },
+  {
+    "name": "NEVER ENDING / NON STOP",
+    "conn": null,
+    "words": [
+      "CHRONIC",
+      "INCESSANT",
+      "INEXORABLE",
+      "INTERMINABLE",
+      "PERENNIAL",
+      "RELENTLESS"
+    ]
+  },
+  {
+    "name": "END / STOP",
+    "conn": null,
+    "words": [
+      "TERMINATE",
+      "CULMINATE",
+      "CEASE",
+      "X ONSET"
+    ]
+  },
+  {
+    "name": "IRREGULAR / PERIODICALLY",
+    "conn": null,
+    "words": [
+      "FITFULLY",
+      "INTERMITTENT",
+      "OCCASIONAL",
+      "SPASMODIC",
+      "SPORADIC"
+    ]
+  },
+  {
+    "name": "CALM DOWN",
+    "conn": "+",
+    "words": [
+      "ALLAY",
+      "ALLEVIATE",
+      "AMELIORATE",
+      "APPEASE",
+      "ASSUAGE",
+      "CONCILIATE",
+      "EXTENUATING",
+      "MITIGATE",
+      "MOLLIFY",
+      "PACIFY",
+      "PLACATE",
+      "PROPITIATE",
+      "SOLACE",
+      "TEMPER",
+      "X EXACERBATE"
+    ]
+  },
+  {
+    "name": "LACKING ENERGY / LAZY",
+    "conn": "-",
+    "words": [
+      "INDOLENT",
+      "LACKADAISICAL",
+      "LACKLUSTER",
+      "LANGUID",
+      "LASSITUDE",
+      "LETHARGIC",
+      "LISTLESS",
+      "SLOTH",
+      "SLUGGISH",
+      "TORPOR",
+      "TORPID"
+    ]
+  },
+  {
+    "name": "HARD WORKING",
+    "conn": "+",
+    "words": [
+      "ASSIDUOUS",
+      "DILIGENT",
+      "INDUSTRIOUS",
+      "PAINSTAKING",
+      "SEDULOUS",
+      "TOIL"
+    ]
+  },
+  {
+    "name": "HAPPY / JOYOUS",
+    "conn": null,
+    "words": [
+      "BEAM",
+      "BLITHE",
+      "ECSTASY",
+      "ELATED",
+      "EUPHORIA",
+      "EXHILARATION",
+      "EXULTANT",
+      "FACETIOUS",
+      "FELICITY",
+      "GAIETY",
+      "JEST",
+      "JOCULAR",
+      "JOCUND",
+      "JOLLITY",
+      "JOVIAL",
+      "JUBILANT",
+      "RAPTUROUS",
+      "REGALE",
+      "UPROARIOUS"
+    ]
+  },
+  {
+    "name": "UNIMPORTANT / TRIVIAL",
+    "conn": null,
+    "words": [
+      "EXPENDABLE",
+      "FRINGE",
+      "INCIDENTAL",
+      "INCONSEQUENTIAL",
+      "MARGINALIZATION",
+      "PERIPHERAL"
+    ]
+  },
+  {
+    "name": "SAD / DEPRESSED",
+    "conn": null,
+    "words": [
+      "ANGUISH",
+      "BEREAVED",
+      "BLEAK",
+      "CRESTFALLEN",
+      "DEJECTED",
+      "DESOLATE",
+      "DESPONDENT",
+      "FORLORN",
+      "GLUM",
+      "LAMENT",
+      "LUGUBRIOUS",
+      "MELANCHOLY",
+      "PLAINTIVE",
+      "WOE"
+    ]
+  },
+  {
+    "name": "ENTHUSIASTIC / EXCITED",
+    "conn": null,
+    "words": [
+      "ARDOR",
+      "ARDENT",
+      "AVID",
+      "DYNAMIC",
+      "EBULLIENT",
+      "EFFERVESCENT",
+      "EFFUSIVE",
+      "EXUBERANT",
+      "FERVENT",
+      "FERVOR",
+      "FRISKY",
+      "GUSHING",
+      "IMPASSIONED",
+      "VIVACIOUS",
+      "ZEALOUS",
+      "ZEST",
+      "X DAMPEN",
+      "X TEPID"
+    ]
+  },
+  {
+    "name": "UNUSUAL / EXCEPTION",
+    "conn": null,
+    "words": [
+      "ABERRATION",
+      "ANOMALY",
+      "DEVIATE"
+    ]
+  },
+  {
+    "name": "ORDINARY",
+    "conn": "-",
+    "words": [
+      "BANAL",
+      "CLICHÉ",
+      "COMMONPLACE",
+      "DERIVATIVE",
+      "HACKNEY",
+      "HUMDRUM",
+      "MUNDANE",
+      "PEDESTRIAN",
+      "PLATITUDE",
+      "PLEBEIAN",
+      "QUOTIDIAN",
+      "TRITE",
+      "UNREMARKABLE"
+    ]
+  },
+  {
+    "name": "DIFFICULT TO UNDERSTAND",
+    "conn": "-",
+    "words": [
+      "ABSTRACT",
+      "ABSTRUSE",
+      "ARCANE",
+      "ESOTERIC",
+      "MYSTICAL",
+      "OBSCURE",
+      "OCCULT",
+      "RECONDITE",
+      "PROFOUND",
+      "PROFUNDITY",
+      "X PERSPICUOUS"
+    ]
+  },
+  {
+    "name": "CRUCIAL / SIGNIFICANT",
+    "conn": null,
+    "words": [
+      "CORE",
+      "FOREMOST",
+      "IMPERATIVE",
+      "INDISPENSABLE",
+      "MANDATORY",
+      "MOMENTOUS",
+      "PARAMOUNT",
+      "PIVOTAL",
+      "SALIENT"
+    ]
+  }
+]
