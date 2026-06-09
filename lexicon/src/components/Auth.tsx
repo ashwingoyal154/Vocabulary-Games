@@ -13,7 +13,8 @@ export function AuthTrigger({ onOpen }: { onOpen: () => void }) {
   if (!configured) return null;
   return (
     <button className="settings-trigger" onClick={onOpen} aria-label="Account">
-      <span aria-hidden="true">{user ? "●" : "○"}</span> {user ? shortEmail(user.email) : "Sign in"}
+      <span className="trigger-ico" aria-hidden="true">{user ? "●" : "○"}</span>
+      <span className="trigger-label">{user ? shortEmail(user.email) : "Sign in"}</span>
     </button>
   );
 }

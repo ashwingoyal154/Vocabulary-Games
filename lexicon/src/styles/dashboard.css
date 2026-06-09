@@ -1,6 +1,13 @@
 /* Analytics dashboard — reuses the app's palette (base.css variables). */
 
 .dash { max-width: 880px; margin: 0 auto; padding: 18px 16px 48px; display: flex; flex-direction: column; gap: 18px; }
+@supports (padding: max(0px)) {
+  .dash {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+    padding-bottom: max(48px, env(safe-area-inset-bottom));
+  }
+}
 
 .dash-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .dash-top h1 { font-family: var(--font-serif); font-size: 26px; font-weight: 600; margin: 0; }
@@ -45,8 +52,10 @@
 
 .chart-empty { color: var(--ink-faint); font-size: 13px; padding: 18px 0; text-align: center; }
 
-/* Mode table */
+/* Mode table — scrolls horizontally on a phone instead of crushing 7 columns. */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .mode-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+@media (max-width: 560px) { .mode-table { min-width: 460px; } }
 .mode-table th, .mode-table td { text-align: right; padding: 7px 8px; border-bottom: 1px solid var(--line); }
 .mode-table th:first-child, .mode-table td:first-child { text-align: left; text-transform: capitalize; }
 .mode-table th { font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; }

@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "smoke": "node scripts/smoke.mjs",
+    "mobile": "node scripts/mobile-check.mjs",
     "validate": "node scripts/validate-data.mjs",
     "ingest": "node scripts/ingest.mjs"
   },

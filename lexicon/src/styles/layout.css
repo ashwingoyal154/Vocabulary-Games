@@ -176,7 +176,7 @@
 
 .qcard { display: flex; flex-direction: column; gap: 18px; align-items: center; padding: 8px 0; }
 .q-word-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; min-height: 92px; justify-content: center; }
-.q-word { font-family: var(--font-serif); font-size: clamp(34px, 9vw, 58px); font-weight: 600; letter-spacing: -.02em; line-height: 1; text-align: center; }
+.q-word { font-family: var(--font-serif); font-size: clamp(34px, 9vw, 58px); font-weight: 600; letter-spacing: -.02em; line-height: 1; text-align: center; max-width: 100%; overflow-wrap: anywhere; hyphens: auto; }
 .q-word-conn { }
 
 .q-options { display: grid; grid-template-columns: 1fr; gap: 9px; width: 100%; max-width: 460px; }
@@ -195,7 +195,7 @@
 
 .q-anchor { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 7px; min-height: 92px; justify-content: center; }
 .q-anchor-label { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint); }
-.q-anchor-name { font-family: var(--font-serif); font-size: clamp(26px, 6vw, 38px); font-weight: 600; line-height: 1.05; }
+.q-anchor-name { font-family: var(--font-serif); font-size: clamp(26px, 6vw, 38px); font-weight: 600; line-height: 1.05; max-width: 100%; overflow-wrap: anywhere; hyphens: auto; }
 .q-anchor-eg { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
 
 .q-teach { width: 100%; max-width: 480px; background: var(--paper-2); border: 1px solid var(--card-edge); border-radius: var(--r-md); padding: 12px 16px; display: flex; flex-direction: column; gap: 8px; }
@@ -282,7 +282,9 @@
   background: var(--card); border: 1px solid var(--card-edge);
   box-shadow: var(--shadow-sm); font-size: 13px; font-weight: 600; color: var(--ink-soft);
   transition: color .12s ease, border-color .12s ease;
+  white-space: nowrap; /* never let the label wrap inside the topbar */
 }
+.trigger-ico { font-size: 13px; line-height: 1; }
 .settings-trigger:hover { color: var(--ink); border-color: var(--line-strong); }
 
 .settings-overlay {
@@ -351,8 +353,8 @@
 .auth-field { display: flex; flex-direction: column; gap: 6px; }
 .auth-input {
   font: inherit;
-  font-size: 15px;
-  padding: 10px 12px;
+  font-size: 16px; /* >=16px stops iOS Safari from auto-zooming the page on focus */
+  padding: 11px 12px;
   border: 1px solid var(--line-strong);
   border-radius: var(--r-md, 10px);
   background: var(--paper, #fff);
@@ -377,3 +379,84 @@
 }
 .auth-toggle:hover { color: var(--ink); }
 .auth-account { font-size: 14px; color: var(--ink); margin: 0; }
+
+/* ================================================================
+   MOBILE & TOUCH  (appended last so it wins source order over the
+   Settings/Auth rules defined above — media queries add no specificity)
+   ================================================================ */
+
+/* --- Topbar: collapse the Settings/account labels to icons so the brand,
+   streak + mastery pills, and both controls share one tidy row. --- */
+@media (max-width: 640px) {
+  .topbar { gap: 8px; flex-wrap: wrap; }
+  .topbar-stats { gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+  .trigger-label { display: none; }
+  .settings-trigger {
+    padding: 0; width: 44px; height: 44px; gap: 0;
+    justify-content: center; border-radius: 50%;
+  }
+  .trigger-ico { font-size: 16px; }
+  .stat-pill { padding: 7px 11px; }
+}
+
+/* Extra squeeze for the narrowest phones (iPhone SE / mini ~320–375px). */
+@media (max-width: 375px) {
+  .topbar { gap: 6px; }
+  .topbar-stats { gap: 5px; }
+  .stat-pill { padding: 6px 9px; font-size: 12px; }
+  .stat-pill .ico { font-size: 12px; }
+  .brand .mark { font-size: 23px; }
+}
+
+/* --- Touch targets: a comfortable ~44px hit area for every control on any
+   touch device (and any narrow viewport). Desktop pointer UIs are untouched. --- */
+@media (pointer: coarse), (max-width: 640px) {
+  .settings-trigger { min-height: 44px; }
+  .back-link { padding: 11px 10px; min-height: 44px; display: inline-flex; align-items: center; }
+  .btn-sm { padding: 12px 16px; }
+  .cbar .btn { min-height: 44px; }
+  .lib-fbtn { padding: 11px 15px; min-height: 44px; }
+  .foot-btn, .foot-reset { min-height: 44px; display: inline-flex; align-items: center; }
+  .review-share { padding: 11px 16px; min-height: 44px; }
+  .settings-close { width: 44px; height: 44px; }
+  .seg-btn { padding: 12px 18px; min-height: 44px; }
+  .auth-input { min-height: 44px; }
+  .auth-reveal { padding: 11px 12px; min-height: 44px; }
+  .auth-toggle { min-height: 44px; padding: 6px 0; }
+  .dash-range button, .dash-refresh { min-height: 40px; }
+
+  /* Range slider: keep the thin track but give the control a full 44px tap band
+     (the bare <input> exposed only a 6px-tall hit area). */
+  .range-input { height: 44px; background: transparent; border-color: transparent; }
+  .range-input::-webkit-slider-runnable-track {
+    height: 6px; border-radius: 999px;
+    background: var(--paper-2); border: 1px solid var(--card-edge);
+  }
+  .range-input::-webkit-slider-thumb { margin-top: -7px; }
+  .range-input::-moz-range-track {
+    height: 6px; border-radius: 999px;
+    background: var(--paper-2); border: 1px solid var(--card-edge);
+  }
+}
+
+/* --- Notch / home-indicator safe areas (viewport-fit=cover is set in index.html). --- */
+@supports (padding: max(0px)) {
+  @media (max-width: 640px) {
+    .topbar {
+      padding-top: max(14px, env(safe-area-inset-top));
+      padding-left: max(14px, env(safe-area-inset-left));
+      padding-right: max(14px, env(safe-area-inset-right));
+    }
+    .stage {
+      padding-left: max(10px, env(safe-area-inset-left));
+      padding-right: max(10px, env(safe-area-inset-right));
+    }
+    .appfoot {
+      padding-bottom: max(26px, env(safe-area-inset-bottom));
+      padding-left: max(16px, env(safe-area-inset-left));
+      padding-right: max(16px, env(safe-area-inset-right));
+    }
+  }
+  /* Bottom sheets clear the home indicator on every size. */
+  .settings-sheet { padding-bottom: max(26px, calc(env(safe-area-inset-bottom) + 14px)); }
+}

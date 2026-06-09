@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Mobile-check screenshot output (transient test artifacts)
+scripts/mobile-shots
+
 # Local env / secrets
 .env
 .env.*

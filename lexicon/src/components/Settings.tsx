@@ -8,7 +8,8 @@ export interface SettingsValues {
 export function SettingsTrigger({ onOpen }: { onOpen: () => void }) {
   return (
     <button className="settings-trigger" onClick={onOpen} aria-label="Open settings">
-      <span aria-hidden="true">⚙</span> Settings
+      <span className="trigger-ico" aria-hidden="true">⚙</span>
+      <span className="trigger-label">Settings</span>
     </button>
   );
 }

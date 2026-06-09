@@ -190,24 +190,26 @@ export function Dashboard({ onExit }: { onExit: () => void }) {
               </div>
             </div>
             {modes.length > 0 && (
-              <table className="mode-table" style={{ marginTop: 16 }}>
-                <thead>
-                  <tr><th>Mode</th><th>Opens</th><th>Started</th><th>Finished</th><th>Finish %</th><th>Avg pts</th><th>Avg score</th></tr>
-                </thead>
-                <tbody>
-                  {modes.map((m) => (
-                    <tr key={m.mode}>
-                      <td>{m.mode}</td>
-                      <td>{m.opens}</td>
-                      <td>{m.starts}</td>
-                      <td>{m.finishes}</td>
-                      <td>{m.starts ? pct(m.finishes, m.starts) : "—"}</td>
-                      <td>{m.avg_points ?? "—"}</td>
-                      <td>{m.avg_pct != null ? m.avg_pct + "%" : "—"}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <div className="table-wrap" style={{ marginTop: 16 }}>
+                <table className="mode-table">
+                  <thead>
+                    <tr><th>Mode</th><th>Opens</th><th>Started</th><th>Finished</th><th>Finish %</th><th>Avg pts</th><th>Avg score</th></tr>
+                  </thead>
+                  <tbody>
+                    {modes.map((m) => (
+                      <tr key={m.mode}>
+                        <td>{m.mode}</td>
+                        <td>{m.opens}</td>
+                        <td>{m.starts}</td>
+                        <td>{m.finishes}</td>
+                        <td>{m.starts ? pct(m.finishes, m.starts) : "—"}</td>
+                        <td>{m.avg_points ?? "—"}</td>
+                        <td>{m.avg_pct != null ? m.avg_pct + "%" : "—"}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             )}
           </div>
 

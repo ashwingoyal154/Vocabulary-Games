@@ -33,6 +33,7 @@
 }
 
 * { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 html, body { margin: 0; padding: 0; }
 body {
   background: var(--paper);
@@ -41,6 +42,14 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Touch ergonomics: kill the 300ms tap delay / double-tap zoom on controls so
+   the games feel native on a phone. Applies everywhere; harmless on desktop. */
+button, a, label, input, .ctile, .qopt, .mode-card, [role="button"], [role="radio"] {
+  touch-action: manipulation;
 }
 
 /* faint paper grain */
@@ -61,6 +70,7 @@ button:focus-visible { outline: 2px solid var(--c-blue); outline-offset: 2px; }
   position: relative;
   z-index: 1;
   min-height: 100vh;
+  min-height: 100dvh; /* dvh tracks the shrinking address bar on mobile so the footer never hides */
   display: flex;
   flex-direction: column;
   align-items: center;
