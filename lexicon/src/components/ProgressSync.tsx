@@ -20,8 +20,14 @@ export function ProgressSync() {
     if (!userId) return;
     let cancelled = false;
     (async () => {
-      const remote = await pullRemote(userId);
+      const { ok, state: remote } = await pullRemote(userId);
       if (cancelled) return;
+      // Couldn't read the cloud (offline, transient error). Do nothing: don't
+      // touch the local working copy, don't claim ownership, and — crucially —
+      // don't push, which would clobber the user's saved cloud progress with
+      // whatever is on this device (e.g. an empty save on a fresh browser).
+      // We retry on the next reconcile rather than risk overwriting good data.
+      if (!ok) return;
       const owner = localStorage.getItem(OWNER_KEY);
 
       if (!owner || owner === userId) {

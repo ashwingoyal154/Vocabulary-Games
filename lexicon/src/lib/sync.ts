@@ -76,9 +76,21 @@ export function mergeStates(local: GameState, remote: GameState): GameState {
   };
 }
 
-/** Fetch the signed-in user's saved state, or null if they have none yet. */
-export async function pullRemote(userId: string): Promise<GameState | null> {
-  if (!supabase) return null;
+/** Outcome of a cloud read. `ok` distinguishes a *successful* read (where `state`
+ *  may still be null — the user simply has no saved row yet) from a *failed* read
+ *  (network / RLS / DB error). This distinction is load-bearing: a caller must
+ *  NEVER write back to the cloud after a failed read, or it would overwrite the
+ *  user's good saved progress with whatever happens to live on this device. */
+export interface PullResult {
+  ok: boolean;
+  state: GameState | null;
+}
+
+/** Fetch the signed-in user's saved state. Returns `{ ok: false }` if the read
+ *  failed — in that case the caller should leave both local and remote untouched
+ *  and retry later, rather than treating it as "no saved progress". */
+export async function pullRemote(userId: string): Promise<PullResult> {
+  if (!supabase) return { ok: false, state: null };
   const { data, error } = await supabase
     .from(TABLE)
     .select("state")
@@ -86,9 +98,9 @@ export async function pullRemote(userId: string): Promise<GameState | null> {
     .maybeSingle();
   if (error) {
     console.warn("[sync] pull failed:", error.message);
-    return null;
+    return { ok: false, state: null };
   }
-  return (data?.state as GameState | undefined) ?? null;
+  return { ok: true, state: (data?.state as GameState | undefined) ?? null };
 }
 
 /** Upsert the signed-in user's state. Returns whether it persisted. */
