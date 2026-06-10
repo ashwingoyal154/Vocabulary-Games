@@ -20,7 +20,7 @@ export function AuthTrigger({ onOpen }: { onOpen: () => void }) {
 }
 
 export function AuthSheet({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const { user, signIn, signUp, signOut } = useAuth();
+  const { user, signIn, signUp, resendConfirm, signOut } = useAuth();
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,6 +29,7 @@ export function AuthSheet({ open, onClose }: { open: boolean; onClose: () => voi
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
+  const [canResend, setCanResend] = useState(false);
 
   if (!open) return null;
 
@@ -36,6 +37,7 @@ export function AuthSheet({ open, onClose }: { open: boolean; onClose: () => voi
     e.preventDefault();
     setErr(null);
     setInfo(null);
+    setCanResend(false);
     if (mode === "signup" && password !== confirm) {
       setErr("Passwords don't match.");
       return;
@@ -45,16 +47,30 @@ export function AuthSheet({ open, onClose }: { open: boolean; onClose: () => voi
     setBusy(false);
     if (res.error) {
       setErr(res.error);
+      setCanResend(Boolean(res.needsConfirm));
       return;
     }
     if (mode === "signup" && res.needsConfirm) {
-      setInfo("Account created — sign in with your email and password to continue.");
+      setInfo(`We emailed a confirmation link to ${email} — click it, then sign in. (Check spam too.)`);
+      setCanResend(true);
       setMode("signin");
       setPassword("");
       setConfirm("");
       return;
     }
     onClose(); // session is live — progress sync runs automatically
+  }
+
+  async function resend() {
+    setBusy(true);
+    const res = await resendConfirm(email);
+    setBusy(false);
+    if (res.error) {
+      setErr(res.error);
+      return;
+    }
+    setErr(null);
+    setInfo(`Confirmation email re-sent to ${email} — check your inbox and spam folder.`);
   }
 
   return (
@@ -133,6 +149,11 @@ export function AuthSheet({ open, onClose }: { open: boolean; onClose: () => voi
 
             {err && <p className="auth-error">{err}</p>}
             {info && <p className="auth-info">{info}</p>}
+            {canResend && (
+              <button type="button" className="auth-toggle" onClick={resend} disabled={busy || !email}>
+                Resend confirmation email
+              </button>
+            )}
 
             <button className="btn btn-primary" type="submit" disabled={busy}>
               {busy ? "…" : mode === "signin" ? "Sign in" : "Create account"}
@@ -141,7 +162,7 @@ export function AuthSheet({ open, onClose }: { open: boolean; onClose: () => voi
             <button
               type="button"
               className="auth-toggle"
-              onClick={() => { setMode(mode === "signin" ? "signup" : "signin"); setErr(null); setInfo(null); setConfirm(""); }}
+              onClick={() => { setMode(mode === "signin" ? "signup" : "signin"); setErr(null); setInfo(null); setConfirm(""); setCanResend(false); }}
             >
               {mode === "signin" ? "New here? Create an account" : "Already have an account? Sign in"}
             </button>
