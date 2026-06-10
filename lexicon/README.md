@@ -102,12 +102,24 @@ npm run build
 
 ## Test
 
-`npm run smoke` runs a headless-Chrome end-to-end check (it drives all four modes and
-fails on any console/runtime error). Start the dev server first:
+`npm test` runs the Vitest unit suite (no server needed). It covers the store's
+save/load/merge behavior, the cloud-sync merge + fail-closed read contract that
+protects signed-in users' progress, dataset invariants, and share-text building.
+
+```sh
+npm test             # unit tests (vitest, jsdom)
+npm run test:watch   # watch mode
+```
+
+`npm run smoke` is a fast headless-Chrome check that every screen mounts;
+`npm run e2e` plays full user journeys (complete rounds, reload persistence,
+old-save migration, backup/restore/reset, settings, search, #admin). Both fail
+on any console/runtime error and need the dev server running:
 
 ```sh
 npm run dev          # in one terminal
 npm run smoke        # in another (tests http://localhost:5173)
+npm run e2e          # full playthrough against the same URL
 ```
 
 ## Project layout
@@ -127,3 +139,5 @@ npm run smoke        # in another (tests http://localhost:5173)
 - `supabase/dashboard.sql` — admin-gated aggregate functions powering the `#admin` dashboard
 - `supabase/analytics-queries.sql` — ready-made aggregate queries for the SQL editor
 - `scripts/smoke.mjs` — headless E2E smoke test
+- `scripts/e2e-full.mjs` — headless E2E full playthrough (journeys, persistence, backup/restore)
+- `tests/` — Vitest unit tests (store, sync contract, dataset invariants, share text, ProgressSync)
