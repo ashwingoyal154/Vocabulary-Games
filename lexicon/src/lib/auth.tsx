@@ -18,7 +18,6 @@ interface AuthValue {
   configured: boolean;
   signUp: (email: string, password: string) => Promise<AuthResult>;
   signIn: (email: string, password: string) => Promise<AuthResult>;
-  resendConfirm: (email: string) => Promise<AuthResult>;
   signOut: () => Promise<void>;
 }
 
@@ -57,17 +56,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (!error) track("sign_in");
       if (error?.message === "Email not confirmed") {
-        return {
-          error: "Your email isn't confirmed yet — click the link in the confirmation email, or resend it below.",
-          needsConfirm: true,
-        };
+        return { error: "This account needs a one-time activation — please contact the site owner." };
       }
-      return { error: error ? error.message : null };
-    },
-
-    async resendConfirm(email) {
-      if (!supabase) return { error: "Accounts aren't configured yet." };
-      const { error } = await supabase.auth.resend({ type: "signup", email });
       return { error: error ? error.message : null };
     },
 
