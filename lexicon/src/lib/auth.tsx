@@ -55,6 +55,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (!supabase) return { error: "Accounts aren't configured yet." };
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (!error) track("sign_in");
+      if (error?.message === "Email not confirmed") {
+        return { error: "This account isn't activated yet — please ask the site owner to activate it." };
+      }
       return { error: error ? error.message : null };
     },
 

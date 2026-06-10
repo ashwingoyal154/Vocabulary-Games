@@ -48,7 +48,7 @@ export function AuthSheet({ open, onClose }: { open: boolean; onClose: () => voi
       return;
     }
     if (mode === "signup" && res.needsConfirm) {
-      setInfo("Check your email to confirm your account, then sign in.");
+      setInfo("Account created — sign in with your email and password to continue.");
       setMode("signin");
       setPassword("");
       setConfirm("");
