@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main, implement-lexicon-game]
+  pull_request:
+  workflow_dispatch:
+
+# Cancel superseded runs on the same ref to save minutes.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Lint · Validate · Test · Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lexicon
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: lexicon/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Validate vocabulary dataset
+        run: npm run validate
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Production build
+        run: npm run build
