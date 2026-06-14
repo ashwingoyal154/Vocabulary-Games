@@ -8,6 +8,9 @@ updates:
       day: monday
     open-pull-requests-limit: 5
     labels: ["dependencies"]
+    commit-message:
+      prefix: "deps"
+      prefix-development: "deps-dev"
     groups:
       production-dependencies:
         dependency-type: production
@@ -21,3 +24,5 @@ updates:
       interval: weekly
       day: monday
     labels: ["dependencies", "ci"]
+    commit-message:
+      prefix: "ci"
