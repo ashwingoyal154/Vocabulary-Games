@@ -13,6 +13,23 @@ entries are grouped by date rather than tagged releases.
   Dependabot, issue/PR templates, `LICENSE` (MIT), `CONTRIBUTING`, `SECURITY`,
   `CODE_OF_CONDUCT`, an architecture guide, and a screenshot-rich README.
 
+## 2026-06-15
+
+### Added
+- **In-app feedback.** A **Feedback** button in the top bar opens a sheet to report a
+  bug, send a suggestion / feature request, rate the app (1–5★), or leave general
+  feedback. Submissions are stored in a dedicated, insert-only Supabase `feedback`
+  table (separate from analytics `events`) and surfaced in the `#admin` dashboard
+  (counts, average rating, latest notes). Identity (anon / session / signed-in user)
+  is shared with analytics. With no backend configured — or if a write fails — it
+  falls back to a `mailto:` link, so feedback is never lost.
+
+### Safety
+- A new **insert-only table only** — no change to the `localStorage` key, `GameState`
+  shape, `mergeStates`, or the fail-closed sync contract, so signed-in players'
+  progress is unaffected. `supabase/feedback.sql` is non-destructive
+  (`create table if not exists` + new admin-gated read functions).
+
 ## 2026-06-14
 
 ### Changed
@@ -36,8 +53,6 @@ entries are grouped by date rather than tagged releases.
 ### Added
 - Optional **email + password accounts** with local-first cloud sync (Supabase).
 - **Admin analytics dashboard** at `#admin` with first-party, cookie-less event tracking.
-- **In-app feedback** — bug reports, suggestions, and 1–5★ ratings into a dedicated
-  insert-only table, surfaced in the admin dashboard, with a `mailto:` fallback.
 - A real **test suite**: Vitest unit tests plus headless-Chrome smoke and full
   end-to-end playthrough harnesses, and a mobile responsiveness audit.
 - The **screenshot → game content pipeline** (transcribe → curate → ingest) for
