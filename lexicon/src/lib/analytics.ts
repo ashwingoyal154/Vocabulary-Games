@@ -40,6 +40,13 @@ if (supabase) {
   supabase.auth.onAuthStateChange((_event, session) => { currentUserId = session?.user?.id ?? null; });
 }
 
+/* Identity accessors — shared so other first-party features (e.g. feedback) can
+ * attach the same per-browser / per-session / per-user ids as analytics, keeping
+ * one consistent notion of "who" across tables. */
+export function getAnonId(): string { return anonId(); }
+export function getSessionId(): string { return SESSION_ID; }
+export function getCurrentUserId(): string | null { return currentUserId; }
+
 /** Record one analytics event. Never blocks the UI and never throws. */
 export function track(name: string, props: Record<string, unknown> = {}): void {
   if (!supabase) return; // local-only build: analytics off

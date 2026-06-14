@@ -87,6 +87,25 @@ mode funnel + completion rate, average scores, retention, and the account funnel
 > hosted. If you haven't deployed yet, any static host works (`npm run build` →
 > serve `dist/`); the dashboard needs no server of its own.
 
+## Feedback
+
+A **Feedback** button in the top bar lets anyone report a bug, send a
+suggestion / feature request, rate the app (1–5 stars), or leave general
+feedback. Submissions are stored as rows in a dedicated Supabase **`feedback`**
+table — separate from analytics `events`, so reports and ratings are easy to
+triage (see `src/lib/feedback.ts`, `src/components/Feedback.tsx`).
+
+1. In the Supabase **SQL editor**, run `supabase/feedback.sql` once (after
+   `dashboard.sql`, which it reuses for the admin check). It creates an
+   append-only `feedback` table (insert-only RLS, like `events`) plus
+   admin-only read functions.
+2. The **`#admin`** dashboard then shows a **Feedback** panel — counts of bugs /
+   suggestions, average rating, and the latest submissions.
+
+Like everything else, this is **optional and free**: with no Supabase env set —
+or if a write ever fails — the sheet falls back to a `mailto:` link so feedback
+is never lost. A `feedback_submit` analytics event is recorded on each send.
+
 ## Develop
 
 ```sh
@@ -130,6 +149,7 @@ npm run e2e          # full playthrough against the same URL
 - `src/lib/share.ts` — builds the shareable recap text and posts it (Web Share API → clipboard)
 - `src/lib/supabase.ts`, `src/lib/auth.tsx`, `src/lib/sync.ts` — optional accounts + cloud progress sync
 - `src/lib/analytics.ts` — optional first-party event tracking (`track()`)
+- `src/lib/feedback.ts`, `src/components/Feedback.tsx` — bug/suggestion/rating/feedback capture (Supabase `feedback` table, mailto fallback)
 - `src/modes/Dashboard.tsx`, `src/components/Charts.tsx` — admin analytics dashboard (`#admin`) + SVG charts
 - `src/components/` — shared UI (badges, progress ring, toasts, settings sheet, auth sheet, `ProgressSync`, `ShareReviewButton`)
 - `src/modes/` — Hub, Library, Clusters, and Quiz (Lightning/Antonyms) screens
@@ -137,6 +157,7 @@ npm run e2e          # full playthrough against the same URL
 - `supabase/schema.sql` — Postgres table + row-level security for saved progress
 - `supabase/events.sql` — analytics event table (append-only, insert-only RLS)
 - `supabase/dashboard.sql` — admin-gated aggregate functions powering the `#admin` dashboard
+- `supabase/feedback.sql` — feedback table (insert-only RLS) + admin-only read functions
 - `supabase/analytics-queries.sql` — ready-made aggregate queries for the SQL editor
 - `scripts/smoke.mjs` — headless E2E smoke test
 - `scripts/e2e-full.mjs` — headless E2E full playthrough (journeys, persistence, backup/restore)

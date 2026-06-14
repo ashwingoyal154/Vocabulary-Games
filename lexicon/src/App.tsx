@@ -8,6 +8,7 @@ import { QuizGame } from "./modes/QuizGame";
 import { Dashboard } from "./modes/Dashboard";
 import { SettingsSheet, SettingsTrigger } from "./components/Settings";
 import { AuthTrigger, AuthSheet } from "./components/Auth";
+import { FeedbackTrigger, FeedbackSheet } from "./components/Feedback";
 import { ProgressSync } from "./components/ProgressSync";
 import { track } from "./lib/analytics";
 
@@ -22,6 +23,7 @@ export default function App() {
   const s = StoreH.get();
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [admin, setAdmin] = useState(isAdminHash);
 
   // ensure the daily goal has a sane default the first time the app loads
@@ -54,6 +56,7 @@ export default function App() {
           <span className="stat-pill flame"><span className="ico">▲</span>{s.streak}</span>
           <span className="stat-pill gem"><span className="ico">◆</span>{StoreH.masteredCount()}</span>
           <AuthTrigger onOpen={() => setAuthOpen(true)} />
+          <FeedbackTrigger onOpen={() => setFeedbackOpen(true)} />
           <SettingsTrigger onOpen={() => setSettingsOpen(true)} />
         </div>
       </header>
@@ -97,6 +100,7 @@ export default function App() {
       />
 
       <AuthSheet open={authOpen} onClose={() => setAuthOpen(false)} />
+      <FeedbackSheet open={feedbackOpen} onClose={() => setFeedbackOpen(false)} />
       <ProgressSync />
     </div>
   );

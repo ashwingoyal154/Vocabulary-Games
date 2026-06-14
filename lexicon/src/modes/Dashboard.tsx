@@ -20,8 +20,19 @@ interface RecentRow {
   ts: string; name: string; props: Record<string, unknown>;
   anon_id: string; user_id: string | null;
 }
+interface FeedbackRow {
+  id: number; ts: string; kind: string; rating: number | null;
+  message: string | null; email: string | null; user_id: string | null;
+}
+interface FeedbackSummary {
+  total: number; bugs: number; suggestions: number; general: number;
+  ratings: number; avg_rating: number | null; rating_count: number;
+}
 
 const RANGES = [7, 30, 90];
+const FEEDBACK_COLOR: Record<string, string> = {
+  bug: "var(--c-rust)", suggestion: "var(--c-blue)", rating: "var(--c-gold)", feedback: "var(--c-green)",
+};
 const MODE_COLOR: Record<string, string> = {
   clusters: "var(--c-blue)", lightning: "var(--c-gold)", antonym: "var(--c-rust)", study: "var(--c-green)",
 };
@@ -58,6 +69,9 @@ export function Dashboard({ onExit }: { onExit: () => void }) {
   const [daily, setDaily] = useState<DailyRow[]>([]);
   const [modes, setModes] = useState<ModeRow[]>([]);
   const [recent, setRecent] = useState<RecentRow[]>([]);
+  const [feedback, setFeedback] = useState<FeedbackRow[]>([]);
+  const [fbSummary, setFbSummary] = useState<FeedbackSummary | null>(null);
+  const [fbErr, setFbErr] = useState<string | null>(null);
 
   const reqId = useRef(0);
 
@@ -88,17 +102,40 @@ export function Dashboard({ onExit }: { onExit: () => void }) {
     setLoading(false);
   }, [days, user]);
 
+  // Feedback loads on its own path so a project that hasn't run feedback.sql yet
+  // still gets a fully-working analytics page — we just show a hint in its place.
+  const loadFeedback = useCallback(async () => {
+    if (!supabase || !user) return;
+    const [r, s] = await Promise.all([
+      supabase.rpc("feedback_recent", { p_limit: 40 }),
+      supabase.rpc("feedback_summary", { p_days: days }),
+    ]);
+    const failure = r.error || s.error;
+    if (failure) {
+      setFbErr(/not authorized/i.test(failure.message)
+        ? failure.message
+        : "Run supabase/feedback.sql to start collecting feedback here.");
+      setFeedback([]); setFbSummary(null);
+      return;
+    }
+    setFbErr(null);
+    setFeedback((r.data as FeedbackRow[]) ?? []);
+    setFbSummary(s.data as FeedbackSummary);
+  }, [days, user]);
+
   // Reload whenever the range/user changes. This is a genuine data-sync effect
   // (Supabase is the external system); the spinner flip it triggers is intended.
   // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { void load(); }, [load]);
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  useEffect(() => { void loadFeedback(); }, [loadFeedback]);
 
   // Live-ish: refresh every 60s while the tab is open and signed in.
   useEffect(() => {
     if (!user) return;
-    const t = setInterval(() => { void load(); }, 60000);
+    const t = setInterval(() => { void load(); void loadFeedback(); }, 60000);
     return () => clearInterval(t);
-  }, [user, load]);
+  }, [user, load, loadFeedback]);
 
   if (!configured) {
     return <DashShell onExit={onExit}><div className="dash-msg"><h2>Analytics not configured</h2>
@@ -141,7 +178,7 @@ export function Dashboard({ onExit }: { onExit: () => void }) {
               <button key={r} className={r === days ? "on" : ""} onClick={() => setDays(r)}>{r}d</button>
             ))}
           </div>
-          <button className="dash-refresh" onClick={() => void load()}>↻</button>
+          <button className="dash-refresh" onClick={() => { void load(); void loadFeedback(); }}>↻</button>
         </div>
       </div>
 
@@ -232,6 +269,40 @@ export function Dashboard({ onExit }: { onExit: () => void }) {
                 );
               })}
             </div>
+          </div>
+
+          <div className="card">
+            <div className="card-head">
+              <h2>Feedback</h2>
+              <span className="dash-updated">{fbSummary ? `${fbSummary.total} total` : ""}</span>
+            </div>
+            {fbErr ? (
+              <div className="chart-empty">{fbErr}</div>
+            ) : (
+              <>
+                {fbSummary && (
+                  <div className="kpis" style={{ marginBottom: 14 }}>
+                    <Kpi num={fbSummary.bugs} label="Bug reports" />
+                    <Kpi num={fbSummary.suggestions} label="Suggestions" />
+                    <Kpi num={fbSummary.avg_rating ?? "—"} label="Avg rating" />
+                  </div>
+                )}
+                <div className="feed">
+                  {feedback.length === 0 && <div className="chart-empty">No feedback yet.</div>}
+                  {feedback.map((f) => (
+                    <div className="feed-row" key={f.id}>
+                      <span className="feed-dot" style={{ background: FEEDBACK_COLOR[f.kind] ?? "var(--ink-faint)" }} />
+                      <span className="feed-meta" title={f.message ?? undefined}>
+                        <span className="feed-name">{f.kind}{f.rating ? ` · ${f.rating}★` : ""}</span>
+                        {f.message ? ` — ${f.message}` : ""}
+                        {f.user_id ? " · account" : " · guest"}
+                      </span>
+                      <span className="feed-time">{timeAgo(f.ts)} ago</span>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         </>
       )}

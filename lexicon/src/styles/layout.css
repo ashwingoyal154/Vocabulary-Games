@@ -383,6 +383,37 @@
 .auth-toggle:hover { color: var(--ink); }
 .auth-account { font-size: 14px; color: var(--ink); margin: 0; }
 
+/* ---- Feedback sheet ---- */
+.fb-kinds {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+}
+.fb-kind {
+  display: flex; flex-direction: column; gap: 2px; text-align: left;
+  padding: 11px 12px; border-radius: var(--r-md, 10px);
+  background: var(--paper, #fff); border: 1px solid var(--card-edge);
+  cursor: pointer; transition: border-color .12s ease, background .12s ease, box-shadow .12s ease;
+}
+.fb-kind:hover { border-color: var(--line-strong); }
+.fb-kind.on { border-color: var(--ink); background: var(--paper-2); box-shadow: inset 0 0 0 1px var(--ink); }
+.fb-kind-label { font-size: 13.5px; font-weight: 600; color: var(--ink); }
+.fb-kind-hint { font-size: 11.5px; color: var(--ink-faint); line-height: 1.35; }
+
+.fb-stars { display: inline-flex; gap: 4px; }
+.fb-star {
+  font-size: 28px; line-height: 1; padding: 2px; cursor: pointer;
+  color: var(--c-gold, #c98a1e); background: none; border: none;
+  transition: transform .08s ease;
+}
+.fb-star.on { color: var(--c-gold, #c98a1e); }
+.fb-star:not(.on) { color: var(--line-strong); }
+.fb-star:hover { transform: scale(1.12); }
+
+.fb-textarea { width: 100%; resize: vertical; min-height: 92px; line-height: 1.45; }
+.fb-optional { font-weight: 400; color: var(--ink-faint); }
+.fb-error-block { display: flex; flex-direction: column; gap: 4px; }
+.fb-actions { display: flex; gap: 10px; }
+.fb-actions .btn { flex: 1; }
+
 /* ================================================================
    MOBILE & TOUCH  (appended last so it wins source order over the
    Settings/Auth rules defined above — media queries add no specificity)
@@ -424,6 +455,11 @@
   .settings-close { width: 44px; height: 44px; }
   .seg-btn { padding: 12px 18px; min-height: 44px; }
   .auth-input { min-height: 44px; }
+  /* Feedback: full-size tap targets for the type cards and the star rating. */
+  .fb-kind { min-height: 56px; }
+  .fb-stars { gap: 6px; }
+  .fb-star { font-size: 32px; padding: 6px 7px; min-width: 44px; min-height: 44px; }
+  .fb-textarea { min-height: 104px; }
   .auth-reveal { padding: 11px 12px; min-height: 44px; }
   .auth-toggle { min-height: 44px; padding: 6px 0; }
   .dash-range button, .dash-refresh { min-height: 40px; }
