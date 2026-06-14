@@ -1,0 +1,55 @@
+name: Bug report
+description: Something in Lexicon isn't working as expected.
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to file a bug. The more precise the repro, the faster the fix.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug, including what you expected instead.
+      placeholder: When I solve a Clusters board, the family reveal …
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the Lightning mode
+        2. Answer a question correctly
+        3. …
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where?
+      options:
+        - Clusters
+        - Lightning
+        - Antonyms
+        - The Lexicon (library)
+        - Dashboard (#admin)
+        - Accounts / sync
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      description: Browser + OS + whether you were signed in (local-only vs account).
+      placeholder: Chrome 130 on iOS 18, signed in
+    validations:
+      required: true
+  - type: checkboxes
+    id: console
+    attributes:
+      label: Checks
+      options:
+        - label: I checked the browser console for errors and included any above.
+        - label: I can reproduce this on the live app (https://vocab-games-ashwin.vercel.app).

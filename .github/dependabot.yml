@@ -1,0 +1,23 @@
+version: 2
+updates:
+  # App dependencies (the real project lives in /lexicon)
+  - package-ecosystem: npm
+    directory: /lexicon
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    labels: ["dependencies"]
+    groups:
+      production-dependencies:
+        dependency-type: production
+      development-dependencies:
+        dependency-type: development
+
+  # Keep the GitHub Actions themselves current
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    labels: ["dependencies", "ci"]

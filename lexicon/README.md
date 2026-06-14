@@ -11,7 +11,7 @@ Built with Vite + React + TypeScript.
 - **Clusters** — sort sixteen words into four hidden meaning-families (Connections-style).
 - **Lightning** — name a flashed word's family before the combo breaks.
 - **Antonyms** — spot the one word that's the opposite of a family of synonyms.
-- **The Lexicon** — a searchable, filterable library of all 80 families / 481 words with mastery tracking.
+- **The Lexicon** — a searchable, filterable library of all 149 families / 991 words with mastery tracking.
 
 Progress (mastery levels, streaks, daily points) is saved to `localStorage` and
 can be carried between browsers/devices via the **Back up / Restore** codes in the footer.

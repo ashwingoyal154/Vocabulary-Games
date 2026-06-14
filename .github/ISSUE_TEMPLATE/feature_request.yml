@@ -1,0 +1,32 @@
+name: Feature request
+description: Suggest an idea — a new mode, a learning mechanic, or a quality-of-life improvement.
+title: "feat: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Start with the learner need, not the solution.
+      placeholder: As a learner, I keep forgetting words I got right once because …
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Fit with project constraints
+      options:
+        - label: This does not require a paid external service (the project is free / bundled-data by design).
+        - label: This does not risk existing players' saved progress (localStorage key + cloud-sync contract).
