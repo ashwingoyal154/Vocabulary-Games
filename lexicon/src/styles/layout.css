@@ -122,6 +122,9 @@
 .solved-name { font-family: var(--font-ui); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: 13px; }
 .solved-conn { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; opacity: .8; border: 1px solid rgba(255,255,255,.5); padding: 1px 7px; border-radius: 999px; }
 .solved-words { font-family: var(--font-serif); font-size: 16px; margin-top: 3px; opacity: .95; }
+/* family members beyond the 4 board tiles, shown on reveal so the whole family is visible */
+.solved-words .fam-extra { opacity: .68; font-style: italic; }
+.rword.fam-extra { opacity: .55; font-style: italic; }
 
 .clue-bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 8px 12px; background: rgba(201,145,47,.1); border: 1px dashed var(--c-gold); border-radius: var(--r-md); }
 .clue-chip { font-family: var(--font-serif); font-size: 14px; font-weight: 600; color: #8a6310; }

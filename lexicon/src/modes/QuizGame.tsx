@@ -12,7 +12,12 @@ import { ShareReviewButton } from "../components/ShareReviewButton";
 const ROUND_LEN = 12;
 
 function weightedWord(): string {
-  const pool = ALL_MEMBER_WORDS;
+  // Lightning drills only words not yet mastered. A correct answer here masters the
+  // word (see answer()), so it won't return — only missed / not-yet-correct words
+  // repeat. Mastered words still surface in Clusters. Fall back to the full set if
+  // everything is mastered, so the mode never runs dry.
+  const unmastered = ALL_MEMBER_WORDS.filter((w) => Store.level(w) < 3);
+  const pool = unmastered.length ? unmastered : ALL_MEMBER_WORDS;
   const weights = pool.map((w) => (3 - Store.level(w)) + (Store.get().seen[w] ? 0 : 1.6) + 0.3);
   const total = weights.reduce((a, b) => a + b, 0);
   let r = Math.random() * total;
@@ -49,7 +54,9 @@ function makeLightningQ(): LightningQ {
     options,
     teach: {
       clusterName: target.name,
-      members: target.members.filter((m) => m !== word).slice(0, 5),
+      // Show the whole family on reveal (the asked word is already shown large above),
+      // so every round reinforces all the words that belong together.
+      members: target.members.filter((m) => m !== word),
       antonyms: target.antonyms
     }
   };
@@ -125,7 +132,10 @@ export function QuizGame({ mode, onExit }: { mode: Mode; onExit: () => void }) {
     setPicked(opt);
     marksRef.current = [...marksRef.current, isCorrect];
     const word = mode === "antonym" ? (q as AntonymQ).answerWord : (q as LightningQ).word;
-    Store.recordWord(word, isCorrect);
+    // Lightning: one correct answer masters the word (and drops it from the pool);
+    // a miss decrements as usual so it keeps coming back. Antonym keeps the gradual +1/-1.
+    if (mode === "lightning" && isCorrect) Store.masterWord(word);
+    else Store.recordWord(word, isCorrect);
     if (isCorrect) {
       const nc = combo + 1;
       setCombo(nc);

@@ -121,6 +121,14 @@ describe("mastery and points", () => {
     expect(Store.learningCount()).toBe(1);
   });
 
+  it("masterWord jumps a word straight to mastered in one shot (Lightning rule)", async () => {
+    const Store = await freshStore();
+    expect(Store.masterWord("ZEAL")).toBe(3); // one correct Lightning answer = mastered
+    expect(Store.level("ZEAL")).toBe(3);
+    expect(Store.get().seen["ZEAL"]).toBe(true);
+    expect(Store.masteredCount()).toBe(1);
+  });
+
   it("records a goal-hit day exactly once", async () => {
     const Store = await freshStore();
     Store.addPoints(120);

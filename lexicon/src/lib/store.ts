@@ -162,6 +162,15 @@ export const Store = {
     return next;
   },
 
+  /** Mark a word fully mastered in one shot. Lightning uses this: a single correct
+   *  answer there counts the word as mastered, which both bumps masteredCount() and
+   *  removes it from the Lightning pool (only missed words repeat there). */
+  masterWord(word: string): number {
+    state.seen[word] = true;
+    state.mastery[word] = 3;
+    return 3;
+  },
+
   addPoints(p: number) {
     ensureDay();
     state.daily.points += p;

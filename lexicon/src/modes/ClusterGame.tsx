@@ -15,7 +15,10 @@ interface BoardGroup {
   name: string;
   conn: Cluster["conn"];
   antonyms: string[];
+  /** the 4 tiles that appear on the board for this group */
   words: string[];
+  /** every member of the family — used to reveal the full family once solved */
+  allMembers: string[];
 }
 
 interface Tile {
@@ -61,7 +64,7 @@ function buildClusterBoard(): BoardGroup[] | null {
       const chosenWords = avail.slice(0, 4 + Math.min(2, avail.length - 4));
       const four = shuffle(chosenWords).slice(0, 4);
       four.forEach((w) => used.add(w));
-      groups.push({ gid: gi, clusterId: c.id, name: c.name, conn: c.conn, antonyms: c.antonyms, words: four });
+      groups.push({ gid: gi, clusterId: c.id, name: c.name, conn: c.conn, antonyms: c.antonyms, words: four, allMembers: c.members });
     }
     if (ok && groups.length === 4) return groups;
   }
@@ -243,13 +246,21 @@ export function ClusterGame({ onExit }: { onExit: () => void }) {
         {solved.map((gid) => {
           const g = groupById(gid)!;
           const color = "var(" + CLUSTER_COLORS[solved.indexOf(gid) % 4] + ")";
+          const extra = g.allMembers.filter((w) => g.words.indexOf(w) === -1);
           return (
             <div key={gid} className="solved-row fade-in" style={{ background: color }}>
               <div className="solved-row-head">
                 <span className="solved-name">{g.name}</span>
                 {g.conn && <span className="solved-conn">{g.conn === "+" ? "positive" : "negative"}</span>}
               </div>
-              <div className="solved-words">{g.words.map((w) => displayWord(w, upper)).join("  ·  ")}</div>
+              <div className="solved-words">
+                {g.words.map((w, i) => (
+                  <span key={w}>{(i > 0 ? "  ·  " : "") + displayWord(w, upper)}</span>
+                ))}
+                {extra.map((w) => (
+                  <span key={w} className="fam-extra">{"  ·  " + displayWord(w, upper)}</span>
+                ))}
+              </div>
             </div>
           );
         })}
@@ -304,7 +315,9 @@ function ClusterResults({ groups, missed, review, streak, upper, onNext, onExit 
         <h3>{missed ? "Here's the full board" : "Four families, mastered"}</h3>
       </div>
       <div className="results-groups">
-        {groups.map((g, i) => (
+        {groups.map((g, i) => {
+          const extra = g.allMembers.filter((w) => g.words.indexOf(w) === -1);
+          return (
           <div key={g.gid} className="rgroup">
             <div className="rgroup-bar" style={{ background: "var(" + CLUSTER_COLORS[i % 4] + ")" }} />
             <div className="rgroup-body">
@@ -314,6 +327,7 @@ function ClusterResults({ groups, missed, review, streak, upper, onNext, onExit 
               </div>
               <div className="rgroup-words">
                 {g.words.map((w) => <span key={w} className="rword">{displayWord(w, upper)}</span>)}
+                {extra.map((w) => <span key={w} className="rword fam-extra">{displayWord(w, upper)}</span>)}
               </div>
               {g.antonyms.length > 0 && (
                 <div className="rgroup-ant">
@@ -323,7 +337,8 @@ function ClusterResults({ groups, missed, review, streak, upper, onNext, onExit 
               )}
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
       <div className="results-actions">
         <button className="btn btn-ghost" onClick={onExit}>Hub</button>
