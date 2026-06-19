@@ -13,6 +13,15 @@ entries are grouped by date rather than tagged releases.
   Dependabot, issue/PR templates, `LICENSE` (MIT), `CONTRIBUTING`, `SECURITY`,
   `CODE_OF_CONDUCT`, an architecture guide, and a screenshot-rich README.
 
+## 2026-06-19
+
+### Added
+- **Interactive charts in the `#admin` dashboard.** Hovering the Activity line charts
+  scrubs to the nearest day, drawing a dashed guide line, a highlighted point, and a
+  tooltip with that day's value and date. Hovering a By-mode bar brightens it and fades
+  the rest so the focused one stands out. Pure CSS + SVG pointer handling — no chart
+  library or extra bundle weight added.
+
 ## 2026-06-15
 
 ### Added
