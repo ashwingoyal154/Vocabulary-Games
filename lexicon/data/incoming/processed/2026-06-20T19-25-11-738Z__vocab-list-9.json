@@ -1,0 +1,20 @@
+[
+  { "name": "IMITATE / COMIC IMITATION", "conn": null, "words": ["EMULATE", "SIMULATE", "* MIMIC"] },
+  { "name": "MEDIATOR / LEAD", "conn": null, "words": ["ARBITER", "ARBITRATOR", "MEDIATE", "* OFFICIATE", "* PRESIDE"] },
+  { "name": "RESPECT", "conn": null, "words": ["COMMEMORATE", "DEFERENCE", "EXALT", "HALLOW", "HOMAGE", "REVERE", "VENERATE"] },
+  { "name": "CONFIRM / DECLARE", "conn": null, "words": ["AFFIRM", "ASCERTAIN", "ASSERT", "AVER", "AVOW", "CONTEND", "PROCLAIM", "TESTIMONY"] },
+  { "name": "GIVE UP", "conn": null, "words": ["ABDICATE", "ABJURE", "ABNEGATE", "CEDE", "FORGO", "FORSAKE", "FORSWEAR", "RELINQUISH", "RENOUNCE"] },
+  { "name": "OFFENSIVE / LUSTY", "conn": null, "words": ["LASCIVIOUS", "LEER", "LEWD", "LURID", "OBSCENE", "SEAMY", "SORDID", "VULGAR"] },
+  { "name": "TO THINK DEEPLY", "conn": null, "words": ["COGITATE", "CONTEMPLATE", "DELIBERATE", "INTROSPECT", "MULL", "MUSE", "PENSIVE", "PONDER", "REFLECT", "RUMINATE"] },
+  { "name": "EASILY AFFECTED", "conn": "-", "words": ["PRONE", "SUBJECT TO", "SUSCEPTIBLE", "VULNERABLE", "X IMPERVIOUS"] },
+  { "name": "CARELESS", "conn": null, "words": ["LAX", "NEGLIGENT", "REMISS", "SLIPSHOD", "X STRINGENT"] },
+  { "name": "UNWELCOME INTRUSION", "conn": null, "words": ["ENCROACH", "IMPINGE", "INFRINGE", "INTRUDE", "OBTRUDE"] },
+  { "name": "FRIENDLY", "conn": null, "words": ["AFFABLE", "AMIABLE", "AMICABLE", "CAMARADERIE", "COMPLAISANCE", "CONGENIAL", "CONVIVIAL", "CORDIAL", "FRATERNIZE", "GENIAL", "GREGARIOUS", "X ALOOF", "X FRIGID", "X GLACIAL"] },
+  { "name": "TO IRRITATE / MAKE ANGRY", "conn": null, "words": ["DISGRUNTLE", "EXASPERATE", "GRATE", "HARANGUE", "HECKLE", "INDIGNATION", "INFURIATE", "IRKSOME", "MIFFED", "NAG", "NETTLE", "PEEVE", "PIQUE", "VEX"] },
+  { "name": "TAKE AWAY FORCIBLY", "conn": null, "words": ["APPROPRIATE", "DIVEST", "EXPROPRIATE", "PREEMPT", "USURP"] },
+  { "name": "INSPIRING FEAR OR RESPECT", "conn": null, "words": ["AWE", "FORMIDABLE", "REDOUBTABLE"] },
+  { "name": "IRRITABLE", "conn": null, "words": ["CANTANKEROUS", "CHAGRIN", "CHOLERIC", "CHURLISH", "CURMUDGEON", "GROUCHY", "GRUFF", "IRASCIBLE", "TESTINESS"] },
+  { "name": "EXAMINE CAREFULLY", "conn": null, "words": ["PERUSE", "PORE OVER", "SCRUTINIZE", "# BROWSE"] },
+  { "name": "HIDE / COVER / DISGUISE", "conn": null, "words": ["CAMOUFLAGE", "CLOAK", "DISSEMBLE", "FEIGN", "GUISE", "INCOGNITO", "MASK", "MASQUERADE", "SHROUD", "VENEER"] },
+  { "name": "SECRET", "conn": "-", "words": ["CLANDESTINE", "COVERT", "FURTIVE", "OBLIQUE", "SKULK", "SLY", "STEALTH", "SURREPTITIOUS", "X OVERT"] }
+]

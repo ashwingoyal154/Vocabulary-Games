@@ -13,6 +13,16 @@ entries are grouped by date rather than tagged releases.
   Dependabot, issue/PR templates, `LICENSE` (MIT), `CONTRIBUTING`, `SECURITY`,
   `CODE_OF_CONDUCT`, an architecture guide, and a screenshot-rich README.
 
+## 2026-06-21
+
+### Added
+- **Vocab Lists 9–11 ingested.** Added 62 new meaning-families and 388 word entries
+  via the screenshot → game content pipeline, growing the dataset from 149 → **211
+  families / 1,345 words** (1,446 total entries incl. antonyms). New themes span RUDE,
+  FLUENT/CLEAR, BRAVE, PUZZLING, ACCUSE/DEFAME, FRIENDLY, IRRITABLE, INTELLIGENT/WISE,
+  PERSUADE, and more. Pure data change — no game code touched; the dataset validator and
+  unit suite pass.
+
 ## 2026-06-19
 
 ### Added

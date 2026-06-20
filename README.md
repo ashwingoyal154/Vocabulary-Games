@@ -6,7 +6,7 @@
 
 A daily-puzzle vocabulary game built around **meaning-families** — clusters of words
 that mean the same thing. Sort them, race to recall them, spot the odd one out, and
-watch your mastery grow. **991 words across 149 families**, fully playable offline.
+watch your mastery grow. **1,345 words across 211 families**, fully playable offline.
 
 [**▶️ Play the live app**](https://vocab-games-ashwin.vercel.app) &nbsp;·&nbsp;
 [Architecture](docs/ARCHITECTURE.md) &nbsp;·&nbsp;
