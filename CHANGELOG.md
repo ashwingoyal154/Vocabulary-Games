@@ -16,6 +16,12 @@ entries are grouped by date rather than tagged releases.
 ## 2026-07-04
 
 ### Added
+- **13 hand-picked words added to existing families** (dataset now **320 families /
+  1,734 words**): EDIFYING, SCREED, HIDEBOUND, STANCH, ACCENTUATE (near), REDOUBLE,
+  SLAPDASH, SUBLIMINAL (near), HORTATORY, MERETRICIOUS, MORDANT, DEMAGOGUE and
+  ANODYNE (near). Curation notes: STANCH went to RESTRICT/STOP/PREVENT (it means to
+  stop a flow, not to soothe) and MERETRICIOUS to FAKE/FALSE/DOUBTFUL (falsely
+  attractive, beside SPECIOUS/SPURIOUS) rather than the families first proposed.
 - **Vocab List 14 ingested.** Added 58 new meaning-families and 119 word entries
   via the screenshot → game content pipeline, growing the dataset from 262 → **320
   families / 1,721 words** (1,834 total entries incl. antonyms). New themes span

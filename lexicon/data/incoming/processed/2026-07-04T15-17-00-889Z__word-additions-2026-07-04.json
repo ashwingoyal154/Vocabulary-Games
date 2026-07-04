@@ -1,0 +1,14 @@
+[
+  { "name": "TO DO WITH TEACHING", "conn": null, "words": ["EDIFYING"] },
+  { "name": "DISAPPROVE / SCOLD", "conn": null, "words": ["SCREED"] },
+  { "name": "NARROW MINDED / REGIONAL", "conn": null, "words": ["HIDEBOUND"] },
+  { "name": "RESTRICT / STOP / PREVENT", "conn": null, "words": ["STANCH"] },
+  { "name": "INCREASE", "conn": null, "words": ["* ACCENTUATE", "REDOUBLE"] },
+  { "name": "CARELESS", "conn": null, "words": ["SLAPDASH"] },
+  { "name": "SECRET", "conn": "-", "words": ["* SUBLIMINAL"] },
+  { "name": "PERSUADE", "conn": null, "words": ["HORTATORY"] },
+  { "name": "FAKE / FALSE / DOUBTFUL", "conn": null, "words": ["MERETRICIOUS"] },
+  { "name": "HARSH / BITING / SHARP", "conn": "-", "words": ["MORDANT"] },
+  { "name": "TO STIR UP / REVOLT", "conn": null, "words": ["DEMAGOGUE"] },
+  { "name": "CALM DOWN", "conn": "+", "words": ["* ANODYNE"] }
+]

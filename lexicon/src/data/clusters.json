@@ -87,7 +87,9 @@
       "ENHANCE",
       "MOUNTING",
       "PROLIFERATE",
-      "WAX"
+      "WAX",
+      "* ACCENTUATE",
+      "REDOUBLE"
     ]
   },
   {
@@ -1232,7 +1234,8 @@
     "conn": null,
     "words": [
       "PEDANTIC",
-      "DIDACTIC"
+      "DIDACTIC",
+      "EDIFYING"
     ]
   },
   {
@@ -1328,7 +1331,8 @@
       "RILE",
       "TIRADE",
       "UPBRAID",
-      "VITUPERATIVE"
+      "VITUPERATIVE",
+      "SCREED"
     ]
   },
   {
@@ -1624,7 +1628,8 @@
       "INSULAR",
       "MYOPIC",
       "PAROCHIAL",
-      "PROVINCIAL"
+      "PROVINCIAL",
+      "HIDEBOUND"
     ]
   },
   {
@@ -1781,7 +1786,8 @@
       "PROPITIATE",
       "SOLACE",
       "TEMPER",
-      "X EXACERBATE"
+      "X EXACERBATE",
+      "* ANODYNE"
     ]
   },
   {
@@ -2199,7 +2205,8 @@
       "SHAM",
       "SOPHISTRY",
       "SPECIOUS",
-      "SPURIOUS"
+      "SPURIOUS",
+      "MERETRICIOUS"
     ]
   },
   {
@@ -2272,7 +2279,8 @@
       "INDUCE",
       "URGE",
       "WHEEDLE",
-      "* WOO"
+      "* WOO",
+      "HORTATORY"
     ]
   },
   {
@@ -2584,7 +2592,8 @@
       "NEGLIGENT",
       "REMISS",
       "SLIPSHOD",
-      "X STRINGENT"
+      "X STRINGENT",
+      "SLAPDASH"
     ]
   },
   {
@@ -2711,7 +2720,8 @@
       "SLY",
       "STEALTH",
       "SURREPTITIOUS",
-      "X OVERT"
+      "X OVERT",
+      "* SUBLIMINAL"
     ]
   },
   {
@@ -3148,7 +3158,8 @@
       "PRECLUDE",
       "RETARD",
       "STYMIE",
-      "THWART"
+      "THWART",
+      "STANCH"
     ]
   },
   {
@@ -3299,7 +3310,8 @@
       "CAUSTIC",
       "INCISIVE",
       "SCATHING",
-      "TRENCHANT"
+      "TRENCHANT",
+      "MORDANT"
     ]
   },
   {
@@ -3441,7 +3453,8 @@
       "INCENDIARY",
       "INSTIGATE",
       "PROVOKE",
-      "SEDITION"
+      "SEDITION",
+      "DEMAGOGUE"
     ]
   },
   {
