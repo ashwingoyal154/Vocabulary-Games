@@ -271,7 +271,9 @@
       "CUPIDITY",
       "RAPACIOUS",
       "RAVENOUS",
-      "VORACIOUS"
+      "VORACIOUS",
+      "GLUTTON",
+      "MERCENARY"
     ]
   },
   {
@@ -1269,7 +1271,8 @@
     "words": [
       "ANACHRONISM",
       "CHRONICLE",
-      "CHRONOLOGICAL"
+      "CHRONOLOGICAL",
+      "CONTEMPORARY"
     ]
   },
   {
@@ -3010,7 +3013,8 @@
       "OBLITERATE",
       "PERISH",
       "RAZE",
-      "X INDELIBLE"
+      "X INDELIBLE",
+      "DEVASTATE"
     ]
   },
   {
@@ -3284,6 +3288,469 @@
     "words": [
       "BENIGN",
       "INNOCUOUS"
+    ]
+  },
+  {
+    "name": "HARSH / BITING / SHARP",
+    "conn": "-",
+    "words": [
+      "ACERBIC",
+      "ACRIMONIOUS",
+      "CAUSTIC",
+      "INCISIVE",
+      "SCATHING",
+      "TRENCHANT"
+    ]
+  },
+  {
+    "name": "VILLAGE-LIKE",
+    "conn": null,
+    "words": [
+      "BUCOLIC",
+      "PASTORAL",
+      "RUSTIC"
+    ]
+  },
+  {
+    "name": "REVENGE",
+    "conn": "-",
+    "words": [
+      "VENGEANCE",
+      "VINDICTIVE",
+      "* RETRIBUTION"
+    ]
+  },
+  {
+    "name": "AFTER EFFECTS",
+    "conn": null,
+    "words": [
+      "RAMIFICATIONS",
+      "REPERCUSSIONS"
+    ]
+  },
+  {
+    "name": "SPIRITUAL / NOT EARTHLY",
+    "conn": "+",
+    "words": [
+      "SUBLIME",
+      "X BASE"
+    ]
+  },
+  {
+    "name": "INDEPENDENCE / FREEDOM",
+    "conn": "+",
+    "words": [
+      "AUTONOMY",
+      "LATITUDE",
+      "SOVEREIGN"
+    ]
+  },
+  {
+    "name": "HESITATE ON MORAL GROUNDS",
+    "conn": null,
+    "words": [
+      "COMPUNCTION",
+      "MISGIVINGS",
+      "QUALMS",
+      "SCRUPLES"
+    ]
+  },
+  {
+    "name": "VARIETY",
+    "conn": null,
+    "words": [
+      "DIVERSITY",
+      "ECLECTIC",
+      "MOTLEY",
+      "MULTIFACETED",
+      "MULTIFARIOUS",
+      "SUNDRY",
+      "VARIEGATE",
+      "VERSATILE",
+      "X HOMOGENEITY"
+    ]
+  },
+  {
+    "name": "INACTIVE",
+    "conn": null,
+    "words": [
+      "DORMANT",
+      "LATENT",
+      "QUIESCENT",
+      "* STAGNANT"
+    ]
+  },
+  {
+    "name": "COUNTER-ATTACK",
+    "conn": null,
+    "words": [
+      "REPRISAL",
+      "RETALIATE"
+    ]
+  },
+  {
+    "name": "SELF-CONTRADICTION",
+    "conn": null,
+    "words": [
+      "IRONY/IRONIC",
+      "PARADOX"
+    ]
+  },
+  {
+    "name": "REVEAL / HIDE",
+    "conn": null,
+    "words": [
+      "DIVULGE",
+      "TELLING",
+      "X CONCEAL",
+      "X SECRETE"
+    ]
+  },
+  {
+    "name": "EXAGGERATE",
+    "conn": null,
+    "words": [
+      "HYPERBOLE",
+      "X UNDERPLAY",
+      "X UNDERSTATE"
+    ]
+  },
+  {
+    "name": "INEFFECTIVE",
+    "conn": "-",
+    "words": [
+      "FUTILE",
+      "INEFFECTUAL",
+      "X EFFICACY"
+    ]
+  },
+  {
+    "name": "EMBARRASS",
+    "conn": null,
+    "words": [
+      "ABASH",
+      "DISCOMFIT",
+      "MORTIFY"
+    ]
+  },
+  {
+    "name": "TO STIR UP / REVOLT",
+    "conn": null,
+    "words": [
+      "INCITE",
+      "INCENDIARY",
+      "INSTIGATE",
+      "PROVOKE",
+      "SEDITION"
+    ]
+  },
+  {
+    "name": "RULE / PRINCIPLE / LAW",
+    "conn": null,
+    "words": [
+      "AXIOMS",
+      "CANONS",
+      "DICTUM",
+      "DOCTRINE",
+      "DOGMAS",
+      "MANDATE",
+      "TENETS"
+    ]
+  },
+  {
+    "name": "SPREAD",
+    "conn": null,
+    "words": [
+      "DIFFUSE",
+      "DISSEMINATE",
+      "PROMULGATE",
+      "PROPAGATE"
+    ]
+  },
+  {
+    "name": "MALICIOUS SELF-SATISFACTION",
+    "conn": "-",
+    "words": [
+      "GLOAT",
+      "SMIRK",
+      "SMUG"
+    ]
+  },
+  {
+    "name": "EXTREMELY BAD / BOTTOMLESS",
+    "conn": "-",
+    "words": [
+      "ABYSMAL"
+    ]
+  },
+  {
+    "name": "APPROACH / CONFRONT BOLDLY",
+    "conn": "-",
+    "words": [
+      "ACCOST"
+    ]
+  },
+  {
+    "name": "COMPARISON OF SIMILAR THINGS",
+    "conn": null,
+    "words": [
+      "ANALOGY"
+    ]
+  },
+  {
+    "name": "SHORT PERSONAL STORY",
+    "conn": null,
+    "words": [
+      "ANECDOTE"
+    ]
+  },
+  {
+    "name": "DIRECTLY OPPOSED",
+    "conn": null,
+    "words": [
+      "ANTITHETICAL"
+    ]
+  },
+  {
+    "name": "ENJOY WARMTH / GLORY",
+    "conn": "+",
+    "words": [
+      "BASK"
+    ]
+  },
+  {
+    "name": "WAVE THREATENINGLY",
+    "conn": "-",
+    "words": [
+      "BRANDISH"
+    ]
+  },
+  {
+    "name": "BRING UP A TOPIC",
+    "conn": null,
+    "words": [
+      "BROACH"
+    ]
+  },
+  {
+    "name": "SUMMON AS IF BY MAGIC",
+    "conn": null,
+    "words": [
+      "CONJURE"
+    ]
+  },
+  {
+    "name": "EASILY SEEN / OBVIOUS",
+    "conn": null,
+    "words": [
+      "CONSPICUOUS"
+    ]
+  },
+  {
+    "name": "BODILY / PHYSICAL",
+    "conn": null,
+    "words": [
+      "CORPOREAL"
+    ]
+  },
+  {
+    "name": "DISREGARD / DOWNPLAY",
+    "conn": null,
+    "words": [
+      "DISCOUNT"
+    ]
+  },
+  {
+    "name": "PUT ON (CLOTHING)",
+    "conn": null,
+    "words": [
+      "DON"
+    ]
+  },
+  {
+    "name": "FLOW OUT FROM A SOURCE",
+    "conn": null,
+    "words": [
+      "EMANATE"
+    ]
+  },
+  {
+    "name": "MILD WORD FOR SOMETHING HARSH",
+    "conn": null,
+    "words": [
+      "EUPHEMISM"
+    ]
+  },
+  {
+    "name": "URGENT / PRESSING",
+    "conn": null,
+    "words": [
+      "EXIGENT"
+    ]
+  },
+  {
+    "name": "SOFT / WEAK",
+    "conn": "-",
+    "words": [
+      "FLABBY"
+    ]
+  },
+  {
+    "name": "CAREFUL MANAGEMENT / FARMING",
+    "conn": null,
+    "words": [
+      "HUSBANDRY"
+    ]
+  },
+  {
+    "name": "ABOUT TO HAPPEN / UNAVOIDABLE",
+    "conn": null,
+    "words": [
+      "IMMINENT",
+      "* INEVITABLE"
+    ]
+  },
+  {
+    "name": "TOO GREAT FOR WORDS",
+    "conn": null,
+    "words": [
+      "INEFFABLE"
+    ]
+  },
+  {
+    "name": "WORN OUT / BORED BY EXCESS",
+    "conn": "-",
+    "words": [
+      "JADED"
+    ]
+  },
+  {
+    "name": "ESSENTIAL PIECE HOLDING ALL TOGETHER",
+    "conn": null,
+    "words": [
+      "LINCHPIN"
+    ]
+  },
+  {
+    "name": "ELEVATED / NOBLE / HAUGHTY",
+    "conn": null,
+    "words": [
+      "LOFTY"
+    ]
+  },
+  {
+    "name": "UNBEATABLE RIVAL / AGENT OF DOWNFALL",
+    "conn": "-",
+    "words": [
+      "NEMESIS"
+    ]
+  },
+  {
+    "name": "FOUL-SMELLING / OFFENSIVE",
+    "conn": "-",
+    "words": [
+      "NOISOME",
+      "RANK"
+    ]
+  },
+  {
+    "name": "BASED ON FACTS, NOT FEELINGS",
+    "conn": null,
+    "words": [
+      "OBJECTIVE",
+      "X SUBJECTIVE"
+    ]
+  },
+  {
+    "name": "KNOWING EVERYTHING",
+    "conn": null,
+    "words": [
+      "OMNISCIENCE"
+    ]
+  },
+  {
+    "name": "CURE-ALL",
+    "conn": null,
+    "words": [
+      "PANACEA"
+    ]
+  },
+  {
+    "name": "EVOKING PITY / TOUCHING",
+    "conn": null,
+    "words": [
+      "PATHOS",
+      "POIGNANT"
+    ]
+  },
+  {
+    "name": "BIASED PROMOTIONAL INFORMATION",
+    "conn": "-",
+    "words": [
+      "PROPAGANDA"
+    ]
+  },
+  {
+    "name": "SUPPLIER / SELLER",
+    "conn": null,
+    "words": [
+      "PURVEYOR"
+    ]
+  },
+  {
+    "name": "DEMOTE / BANISH",
+    "conn": "-",
+    "words": [
+      "RELEGATE"
+    ]
+  },
+  {
+    "name": "RELATING TO CLOTHING",
+    "conn": null,
+    "words": [
+      "SARTORIAL"
+    ]
+  },
+  {
+    "name": "FORMALLY OFFER",
+    "conn": null,
+    "words": [
+      "TENDER"
+    ]
+  },
+  {
+    "name": "UNPLEASANT TO TASTE / ACCEPT",
+    "conn": "-",
+    "words": [
+      "UNPALATABLE"
+    ]
+  },
+  {
+    "name": "CORRUPT / OPEN TO BRIBERY",
+    "conn": "-",
+    "words": [
+      "VENAL"
+    ]
+  },
+  {
+    "name": "MINOR / FORGIVABLE",
+    "conn": null,
+    "words": [
+      "VENIAL"
+    ]
+  },
+  {
+    "name": "EXPERIENCED THROUGH ANOTHER",
+    "conn": null,
+    "words": [
+      "VICARIOUS"
+    ]
+  },
+  {
+    "name": "CLASSIC / FROM A PAST ERA",
+    "conn": null,
+    "words": [
+      "VINTAGE"
     ]
   }
 ]

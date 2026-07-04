@@ -13,6 +13,20 @@ entries are grouped by date rather than tagged releases.
   Dependabot, issue/PR templates, `LICENSE` (MIT), `CONTRIBUTING`, `SECURITY`,
   `CODE_OF_CONDUCT`, an architecture guide, and a screenshot-rich README.
 
+## 2026-07-04
+
+### Added
+- **Vocab List 14 ingested.** Added 58 new meaning-families and 119 word entries
+  via the screenshot → game content pipeline, growing the dataset from 262 → **320
+  families / 1,721 words** (1,834 total entries incl. antonyms). New themes span
+  HARSH/BITING/SHARP, REVENGE, VARIETY, INACTIVE, REVEAL/HIDE, EXAGGERATE, EMBARRASS,
+  TO STIR UP/REVOLT, RULE/PRINCIPLE/LAW, SPREAD, MALICIOUS SELF-SATISFACTION, and more.
+  The list's MISCELLANEOUS section became small definition-named families (e.g. PANACEA →
+  "CURE-ALL") so each word is quizzable in Lightning; DEVASTATE, CONTEMPORARY, GLUTTON and
+  MERCENARY were merged into existing families, and INANE was skipped as already taught
+  under STUPID/FOOLISH. Pure data change — no game code touched; validator, unit, smoke,
+  and e2e suites all pass.
+
 ## 2026-06-28
 
 ### Added

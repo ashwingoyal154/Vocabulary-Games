@@ -67,6 +67,27 @@ describe("word index", () => {
   });
 });
 
+describe("ingest regressions", () => {
+  // One sentinel word per ingested batch. Presence-only (never counts), so the
+  // dataset can keep growing — this just catches a future merge silently
+  // dropping or renaming whole families.
+  it("keeps a sentinel word from every ingested vocab list", () => {
+    const sentinels: Record<string, string> = {
+      MISCREANT: "CRIMINALS / LAWBREAKERS", // original dataset
+      VENERATE: "RESPECT",                  // lists 9–11
+      GARGANTUAN: "HUGE / BIG",             // lists 12–13
+      TRENCHANT: "HARSH / BITING / SHARP",  // list 14
+      PANACEA: "CURE-ALL",                  // list 14 (MISCELLANEOUS section)
+    };
+    for (const [word, family] of Object.entries(sentinels)) {
+      const entries = WORD_INDEX[word];
+      expect(entries, `${word} missing from dataset`).toBeDefined();
+      const homes = entries.map((e) => CLUSTERS[e.clusterId].name);
+      expect(homes, `${word} not in family "${family}"`).toContain(family);
+    }
+  });
+});
+
 describe("game-mode coverage", () => {
   it("Clusters mode can always build a board (>=4 families with >=4 members)", () => {
     expect(BIG_CLUSTERS.length).toBeGreaterThanOrEqual(4);
